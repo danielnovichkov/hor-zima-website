@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ru="Community Center 'Хор Зима' - Комьюнити центр в Баре" 
-           data-en="Community Center 'Hor Zima' - Cultural and Educational Center in Bar" 
-           data-me="Community Center 'Hor Zima' - Kulturno-obrazovni centar u Baru">Community Center "Хор Зима" - Комьюнити центр в Баре</title>
+    <title data-ru="Community Center 'Зима' - Комьюнити центр в Баре" 
+           data-en="Community Center 'Zima' - Cultural and Educational Center in Bar" 
+           data-me="Community Center 'Zima' - Kulturno-obrazovni centar u Baru">Community Center "Зима" - Комьюнити центр в Баре</title>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -158,26 +158,41 @@
         /* Language Switcher */
         .language-switcher {
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             align-items: center;
         }
         
-        .lang-btn {
-            background: rgba(135, 206, 235, 0.2);
-            border: 1px solid rgba(135, 206, 235, 0.4);
+        .lang-link {
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
+            text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.25rem 0;
+            transition: all 0.3s;
+            position: relative;
         }
         
-        .lang-btn:hover,
-        .lang-btn.active {
-            background: rgba(135, 206, 235, 0.4);
-            border-color: rgba(135, 206, 235, 0.6);
-            box-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
+        .lang-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #87ceeb;
+            transition: width 0.3s;
+        }
+        
+        .lang-link:hover::after {
+            width: 100%;
+        }
+        
+        .lang-link.active {
+            color: #87ceeb;
+        }
+        
+        .lang-link.active::after {
+            width: 100%;
         }
         
         /* Hero Section */
@@ -750,9 +765,9 @@
                     </ul>
                 </nav>
                 <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="ru">RU</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="me">ME</button>
+                    <a href="#" class="lang-link active" data-lang="ru">RU</a>
+                    <a href="#" class="lang-link" data-lang="en">EN</a>
+                    <a href="#" class="lang-link" data-lang="me">CG</a>
                 </div>
             </div>
         </div>
@@ -1014,22 +1029,22 @@
             <div class="media-grid">
                 <div class="media-item">
                     <div class="media-date" data-ru="15 января 2025" data-en="January 15, 2025" data-me="15. januar 2025.">15 января 2025</div>
-                    <div class="media-title" data-ru="'Хор Зима' открывает новые программы для детей" data-en="'Hor Zima' opens new programs for children" data-me="'Hor Zima' otvara nove programe za decu">"Хор Зима" открывает новые программы для детей</div>
+                    <div class="media-title" data-ru="'Зима' открывает новые программы для детей" data-en="'Zima' opens new programs for children" data-me="'Zima' otvara nove programe za decu">"Зима" открывает новые программы для детей</div>
                     <div class="media-source" data-ru="Газета 'Вијести', Бар" data-en="'Vijesti' Newspaper, Bar" data-me="List 'Vijesti', Bar">Газета "Вијести", Бар</div>
                 </div>
                 <div class="media-item">
                     <div class="media-date" data-ru="8 января 2025" data-en="January 8, 2025" data-me="8. januar 2025.">8 января 2025</div>
-                    <div class="media-title" data-ru="Межкультурный диалог в Баре: успехи комьюнити центра 'Хор Зима'" data-en="Intercultural dialogue in Bar: successes of 'Hor Zima' center" data-me="Međukulturni dijalog u Baru: uspesi centra 'Hor Zima'">Межкультурный диалог в Баре: успехи комьюнити центра "Хор Зима"</div>
+                    <div class="media-title" data-ru="Межкультурный диалог в Баре: успехи комьюнити центра 'Зима'" data-en="Intercultural dialogue in Bar: successes of 'Zima' center" data-me="Međukulturni dijalog u Baru: uspesi centra 'Zima'">Межкультурный диалог в Баре: успехи комьюнити центра "Зима"</div>
                     <div class="media-source" data-ru="Радио Бар" data-en="Radio Bar" data-me="Radio Bar">Радио Бар</div>
                 </div>
                 <div class="media-item">
                     <div class="media-date" data-ru="2 января 2025" data-en="January 2, 2025" data-me="2. januar 2025.">2 января 2025</div>
-                    <div class="media-title" data-ru="STEAM-образование для детей: инновационный подход комьюнити центра 'Хор Зима'" data-en="STEAM education for children: innovative approach of 'Hor Zima' center" data-me="STEAM obrazovanje za decu: inovativni pristup centra 'Hor Zima'">STEAM-образование для детей: инновационный подход комьюнити центра "Хор Зима"</div>
+                    <div class="media-title" data-ru="STEAM-образование для детей: инновационный подход комьюнити центра 'Зима'" data-en="STEAM education for children: innovative approach of 'Zima' center" data-me="STEAM obrazovanje za decu: inovativni pristup centra 'Zima'">STEAM-образование для детей: инновационный подход комьюнити центра "Зима"</div>
                     <div class="media-source" data-ru="Портал 'Монтенегро Данас'" data-en="'Montenegro Danas' Portal" data-me="Portal 'Crna Gora Danas'">Портал "Монтенегро Данас"</div>
                 </div>
                 <div class="media-item">
                     <div class="media-date" data-ru="25 декабря 2024" data-en="December 25, 2024" data-me="25. decembar 2024.">25 декабря 2024</div>
-                    <div class="media-title" data-ru="Русскоязычное сообщество в Черногории: роль комьюнити центра 'Хор Зима'" data-en="Russian-speaking community in Montenegro: the role of 'Hor Zima' center" data-me="Rusko-govoreća zajednica u Crnoj Gori: uloga centra 'Hor Zima'">Русскоязычное сообщество в Черногории: роль комьюнити центра "Хор Зима"</div>
+                    <div class="media-title" data-ru="Русскоязычное сообщество в Черногории: роль комьюнити центра 'Зима'" data-en="Russian-speaking community in Montenegro: the role of 'Zima' center" data-me="Rusko-govoreća zajednica u Crnoj Gori: uloga centra 'Zima'">Русскоязычное сообщество в Черногории: роль комьюнити центра "Зима"</div>
                     <div class="media-source" data-ru="Телеканал 'ТВ Будва'" data-en="'TV Budva' Channel" data-me="TV kanal 'TV Budva'">Телеканал "ТВ Будва"</div>
                 </div>
                 <div class="media-item">
@@ -1039,7 +1054,7 @@
                 </div>
                 <div class="media-item">
                     <div class="media-date" data-ru="10 декабря 2024" data-en="December 10, 2024" data-me="10. decembar 2024.">10 декабря 2024</div>
-                    <div class="media-title" data-ru="Детские программы комьюнити центра 'Хор Зима': творчество и развитие" data-en="Children's programs of 'Hor Zima' center: creativity and development" data-me="Dečiji programi centra 'Hor Zima': kreativnost i razvoj">Детские программы комьюнити центра "Хор Зима": творчество и развитие</div>
+                    <div class="media-title" data-ru="Детские программы комьюнити центра 'Зима': творчество и развитие" data-en="Children's programs of 'Zima' center: creativity and development" data-me="Dečiji programi centra 'Zima': kreativnost i razvoj">Детские программы комьюнити центра "Зима": творчество и развитие</div>
                     <div class="media-source" data-ru="Портал 'Бар Инфо'" data-en="'Bar Info' Portal" data-me="Portal 'Bar Info'">Портал "Бар Инфо"</div>
                 </div>
             </div>
@@ -1212,9 +1227,9 @@
             </div>
             
             <div class="footer-bottom">
-                <p data-ru="&copy; 2025 Community Center 'Хор Зима'. Все права защищены." 
-                   data-en="&copy; 2025 Community Center 'Hor Zima'. All rights reserved." 
-                   data-me="&copy; 2025 Community Center 'Hor Zima'. Sva prava zadržana.">&copy; 2025 Community Center "Хор Зима". Все права защищены.</p>
+                <p data-ru="&copy; 2025 Community Center 'Зима'. Все права защищены." 
+                   data-en="&copy; 2025 Community Center 'Zima'. All rights reserved." 
+                   data-me="&copy; 2025 Community Center 'Zima'. Sva prava zadržana.">&copy; 2025 Community Center "Зима". Все права защищены.</p>
                 <p data-ru="НКО, зарегистрированная в Черногории" 
                    data-en="NGO registered in Montenegro" 
                    data-me="NVO registrovana u Crnoj Gori">НКО, зарегистрированная в Черногории</p>
@@ -1227,8 +1242,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, initializing language switcher...');
             
-            const langButtons = document.querySelectorAll('.lang-btn');
-            console.log('Found language buttons:', langButtons.length);
+            const langLinks = document.querySelectorAll('.lang-link');
+            console.log('Found language links:', langLinks.length);
             
             const body = document.body;
             
@@ -1239,11 +1254,11 @@
                 // Update body class
                 body.className = `lang-${lang}`;
                 
-                // Update active button
-                langButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.getAttribute('data-lang') === lang) {
-                        btn.classList.add('active');
+                // Update active link
+                langLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-lang') === lang) {
+                        link.classList.add('active');
                     }
                 });
                 
@@ -1280,10 +1295,11 @@
                 console.log('Language switch completed');
             }
             
-            // Add click event listeners to language buttons
-            langButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    console.log('Language button clicked:', this.getAttribute('data-lang'));
+            // Add click event listeners to language links
+            langLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Language link clicked:', this.getAttribute('data-lang'));
                     const lang = this.getAttribute('data-lang');
                     switchLanguage(lang);
                 });
