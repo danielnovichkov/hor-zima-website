@@ -32,7 +32,7 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a365d; /* Dark blue matching the logo */
             color: white;
             padding: 1rem 0;
             position: sticky;
@@ -47,8 +47,75 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 1.8rem;
             font-weight: bold;
+        }
+        
+        .logo-icon {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .snowflake {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            color: #87ceeb; /* Light blue like in logo */
+        }
+        
+        .snowflake::before {
+            content: '❄';
+            font-size: 32px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #87ceeb;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
+        
+        .sparkle:nth-child(1) {
+            top: 5px;
+            right: 8px;
+            animation-delay: 0s;
+        }
+        
+        .sparkle:nth-child(2) {
+            top: 15px;
+            left: 5px;
+            animation-delay: 1s;
+        }
+        
+        .sparkle:nth-child(3) {
+            bottom: 8px;
+            right: 12px;
+            animation-delay: 2s;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
         }
         
         .logo-subtitle {
@@ -81,19 +148,21 @@
         }
         
         .lang-btn {
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(135, 206, 235, 0.2);
+            border: 1px solid rgba(135, 206, 235, 0.4);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
         }
         
         .lang-btn:hover,
         .lang-btn.active {
-            background: rgba(255,255,255,0.3);
+            background: rgba(135, 206, 235, 0.4);
+            border-color: rgba(135, 206, 235, 0.6);
+            box-shadow: 0 0 10px rgba(135, 206, 235, 0.3);
         }
         
         /* Hero Section */
@@ -640,8 +709,17 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div data-ru="Хор Зима" data-en="Hor Zima" data-me="Hor Zima">Хор Зима</div>
-                    <div class="logo-subtitle" data-ru="Community Center" data-en="Community Center" data-me="Community Center">Community Center</div>
+                    <div class="logo-icon">
+                        <div class="snowflake">
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                            <div class="sparkle"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div data-ru="Хор Зима" data-en="Hor Zima" data-me="Hor Zima">Хор Зима</div>
+                        <div class="logo-subtitle" data-ru="Комьюнити центр" data-en="Community Center" data-me="Komjuniti Centar">Комьюнити центр</div>
+                    </div>
                 </div>
                 <nav>
                     <ul>
