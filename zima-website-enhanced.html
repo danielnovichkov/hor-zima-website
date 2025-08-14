@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ru="Community Center 'Хор Зима' - Культурно-образовательный центр в Баре" 
+           data-en="Community Center 'Hor Zima' - Cultural and Educational Center in Bar" 
+           data-me="Community Center 'Hor Zima' - Kulturno-obrazovni centar u Baru">Community Center "Хор Зима" - Культурно-образовательный центр в Баре</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('placeholder-hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+        }
+        
+        /* Main Content Sections */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section:nth-child(even) {
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .card p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .program-image {
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .program-content {
+            padding: 1.5rem;
+        }
+        
+        .program-content h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-content p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        /* Media Section */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .media-item {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .media-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .media-date {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .media-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .media-source {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .award-item {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .award-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .award-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+        
+        .award-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .award-category {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .award-year {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .social-telegram {
+            background: #0088cc;
+        }
+        
+        .social-facebook {
+            background: #1877f2;
+        }
+        
+        .social-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .social-youtube {
+            background: #ff0000;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .cards-grid,
+            .programs-grid,
+            .stats-grid,
+            .team-grid,
+            .media-grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+                min-height: 50vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .card,
+            .program-card,
+            .team-member,
+            .media-item,
+            .award-item {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Placeholder Styles */
+        .placeholder {
+            background: #f1f2f6;
+            border: 2px dashed #ddd;
+            padding: 2rem;
+            text-align: center;
+            color: #666;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+        
+        .placeholder-large {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .placeholder-medium {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .placeholder-small {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Language-specific content */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang="ru"] {
+            display: block;
+        }
+        
+        .lang-ru [data-lang="ru"] {
+            display: block;
+        }
+        
+        .lang-en [data-lang="en"] {
+            display: block;
+        }
+        
+        .lang-me [data-lang="me"] {
+            display: block;
+        }
+    </style>
+</head>
+<body class="lang-ru">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div data-ru="Хор Зима" data-en="Hor Zima" data-me="Hor Zima">Хор Зима</div>
+                    <div class="logo-subtitle" data-ru="Community Center" data-en="Community Center" data-me="Community Center">Community Center</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" data-ru="Главная" data-en="Home" data-me="Početna">Главная</a></li>
+                        <li><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
+                        <li><a href="#programs" data-ru="Программы" data-en="Programs" data-me="Programi">Программы</a></li>
+                        <li><a href="#impact" data-ru="Результаты" data-en="Impact" data-me="Rezultati">Результаты</a></li>
+                        <li><a href="#team" data-ru="Команда" data-en="Team" data-me="Tim">Команда</a></li>
+                        <li><a href="#partners" data-ru="Партнеры" data-en="Partners" data-me="Partneri">Партнеры</a></li>
+                        <li><a href="#media" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</a></li>
+                        <li><a href="#awards" data-ru="Награды" data-en="Awards" data-me="Nagrade">Награды</a></li>
+                        <li><a href="#contact" data-ru="Контакты" data-en="Contact" data-me="Kontakt">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="me">ME</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 data-ru="Культурно-образовательный центр 'Хор Зима'" 
+                data-en="Cultural and Educational Center 'Hor Zima'" 
+                data-me="Kulturno-obrazovni centar 'Hor Zima'">Культурно-образовательный центр "Хор Зима"</h1>
+            <p data-ru="Объединяем традиции и инновации для развития многоязычного сообщества в Баре, Черногория"
+               data-en="Uniting traditions and innovations for the development of a multilingual community in Bar, Montenegro"
+               data-me="Ujedinjujemo tradiciju i inovacije za razvoj multilingvalne zajednice u Baru, Crna Gora">Объединяем традиции и инновации для развития многоязычного сообщества в Баре, Черногория</p>
+            <button class="cta-button" data-ru="Присоединиться к нам" data-en="Join Us" data-me="Pridružite nam se">Присоединиться к нам</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="О нашем центре" data-en="About Our Center" data-me="O našem centru">О нашем центре</h2>
+            <p class="section-subtitle" data-ru="Мы создаем пространство для развития, обучения и культурного обмена, объединяя русскоязычные, местные и международные сообщества"
+               data-en="We create a space for development, learning and cultural exchange, uniting Russian-speaking, local and international communities"
+               data-me="Stvaramo prostor za razvoj, učenje i kulturnu razmenu, ujedinjujući rusko-govoreće, lokalne i međunarodne zajednice">Мы создаем пространство для развития, обучения и культурного обмена, объединяя русскоязычные, местные и международные сообщества</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3 data-ru="Миссия" data-en="Mission" data-me="Misija">Миссия</h3>
+                    <p data-ru="Создание инклюзивного пространства для культурного обмена, образования и развития сообщества в многоязычной среде Бара"
+                       data-en="Creating an inclusive space for cultural exchange, education and community development in the multilingual environment of Bar"
+                       data-me="Stvaranje inkluzivnog prostora za kulturnu razmenu, obrazovanje i razvoj zajednice u multilingvalnom okruženju Bara">Создание инклюзивного пространства для культурного обмена, образования и развития сообщества в многоязычной среде Бара</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👁️</div>
+                    <h3 data-ru="Видение" data-en="Vision" data-me="Vizija">Видение</h3>
+                    <p data-ru="Стать ведущим центром межкультурного диалога и образовательных инноваций в регионе"
+                       data-en="To become a leading center for intercultural dialogue and educational innovation in the region"
+                       data-me="Postati vodeći centar za međukulturni dijalog i obrazovne inovacije u regionu">Стать ведущим центром межкультурного диалога и образовательных инноваций в регионе</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💎</div>
+                    <h3 data-ru="Ценности" data-en="Values" data-me="Vrednosti">Ценности</h3>
+                    <p data-ru="Инклюзивность, инновации, устойчивое развитие, партнерство, культурное разнообразие"
+                       data-en="Inclusiveness, innovation, sustainable development, partnership, cultural diversity"
+                       data-me="Inkluzivnost, inovacije, održivi razvoj, partnerstvo, kulturna raznovrsnost">Инклюзивность, инновации, устойчивое развитие, партнерство, культурное разнообразие</p>
+                </div>
+            </div>
+            
+                         <div class="placeholder placeholder-large" data-ru="[Здесь будет размещена информация о текущем состоянии организации, количестве участников, основных программах и достижениях]"
+                  data-en="[Information about the current state of the organization, number of participants, main programs and achievements will be placed here]"
+                  data-me="[Ovde će biti postavljene informacije o trenutnom stanju organizacije, broju učesnika, glavnim programima i dostignućima]">[Здесь будет размещена информация о текущем состоянии организации, количестве участников, основных программах и достижениях]</div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Наши программы" data-en="Our Programs" data-me="Naši programi">Наши программы</h2>
+            <p class="section-subtitle" data-ru="Разнообразные образовательные и культурные программы для всех возрастов"
+               data-en="Diverse educational and cultural programs for all ages"
+               data-me="Raznovrsni obrazovni i kulturni programi za sve uzraste">Разнообразные образовательные и культурные программы для всех возрастов</p>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото STEAM-клуба]" data-en="[STEAM Club Photo]" data-me="[STEAM Klub Foto]">[Фото STEAM-клуба]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Детский STEAM-клуб" data-en="Children's STEAM Club" data-me="Dečiji STEAM Klub">Детский STEAM-клуб</h4>
+                        <p data-ru="Робототехника, программирование, научные эксперименты для детей 6-10 лет"
+                           data-en="Robotics, programming, scientific experiments for children 6-10 years old"
+                           data-me="Robotika, programiranje, naučni eksperimenti za decu 6-10 godina">Робототехника, программирование, научные эксперименты для детей 6-10 лет</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото арт-студии]" data-en="[Art Studio Photo]" data-me="[Umetnička Radionica Foto]">[Фото арт-студии]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Арт-студия" data-en="Art Studio" data-me="Umetnička Radionica">Арт-студия</h4>
+                        <p data-ru="Творческие мастерские: рисование, лепка, аппликация для детей 5-12 лет"
+                           data-en="Creative workshops: drawing, modeling, applique for children 5-12 years old"
+                           data-me="Kreativne radionice: crtanje, modelovanje, aplikacija za decu 5-12 godina">Творческие мастерские: рисование, лепка, аппликация для детей 5-12 лет</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото культурного вечера]" data-en="[Cultural Evening Photo]" data-me="[Kulturno Veče Foto]">[Фото культурного вечера]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Культурные вечера" data-en="Cultural Evenings" data-me="Kulturna Večera">Культурные вечера</h4>
+                        <p data-ru="Киноклуб, лектории, дискуссии с субтитрами на трех языках"
+                           data-en="Film club, lectures, discussions with subtitles in three languages"
+                           data-me="Film klub, predavanja, diskusije sa titlovima na tri jezika">Киноклуб, лектории, дискуссии с субтитрами на трех языках</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото музыкального кружка]" data-en="[Music Club Photo]" data-me="[Muzički Klub Foto]">[Фото музыкального кружка]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Музыкальный кружок" data-en="Music Club" data-me="Muzički Klub">Музыкальный кружок</h4>
+                        <p data-ru="Пение, ритмика, знакомство с инструментами для детей 4-8 лет"
+                           data-en="Singing, rhythmics, introduction to instruments for children 4-8 years old"
+                           data-me="Pevanje, ritmika, upoznavanje sa instrumentima za decu 4-8 godina">Пение, ритмика, знакомство с инструментами для детей 4-8 лет</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото языкового обмена]" data-en="[Language Exchange Photo]" data-me="[Jezik Razmena Foto]">[Фото языкового обмена]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Языковые обмены" data-en="Language Exchanges" data-me="Jezik Razmene">Языковые обмены</h4>
+                        <p data-ru="Разговорные клубы для родителей: русский-черногорский-английский"
+                           data-en="Conversation clubs for parents: Russian-Montenegrin-English"
+                           data-me="Konverzacijski klubovi za roditelje: ruski-crnogorski-engleski">Разговорные клубы для родителей: русский-черногорский-английский</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото семейного мастер-класса]" data-en="[Family Workshop Photo]" data-me="[Porodična Radionica Foto]">[Фото семейного мастер-класса]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Семейные мастер-классы" data-en="Family Workshops" data-me="Porodične Radionice">Семейные мастер-классы</h4>
+                        <p data-ru="Совместное творчество, ремесла, кулинария для всей семьи"
+                           data-en="Joint creativity, crafts, cooking for the whole family"
+                           data-me="Zajednička kreativnost, zanati, kuvanje za celu porodicu">Совместное творчество, ремесла, кулинария для всей семьи</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="placeholder placeholder-medium" data-ru="[Здесь будет размещена информация о расписании занятий, стоимости участия и процессе регистрации]"
+                 data-en="[Information about class schedules, participation costs and registration process will be placed here]"
+                 data-me="[Ovde će biti postavljene informacije o rasporedu časova, troškovima učešća i procesu registracije]">[Здесь будет размещена информация о расписании занятий, стоимости участия и процессе регистрации]</div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Наши результаты" data-en="Our Impact" data-me="Naši Rezultati">Наши результаты</h2>
+            <p class="section-subtitle" data-ru="Измеряем наше влияние на сообщество через конкретные показатели"
+               data-en="We measure our impact on the community through specific indicators"
+               data-me="Merimo naš uticaj na zajednicu kroz specifične indikatore">Измеряем наше влияние на сообщество через конкретные показатели</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <div class="stat-label" data-ru="Активных участников" data-en="Active Participants" data-me="Aktivnih Učesnika">Активных участников</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <div class="stat-label" data-ru="Основных программ" data-en="Main Programs" data-me="Glavnih Programa">Основных программ</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <div class="stat-label" data-ru="Семей вовлечено" data-en="Families Involved" data-me="Uključenih Porodica">Семей вовлечено</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <div class="stat-label" data-ru="Языка общения" data-en="Languages of Communication" data-me="Jezika Komunikacije">Языка общения</div>
+                </div>
+            </div>
+            
+            <div class="placeholder placeholder-large" data-ru="[Здесь будут размещены детальные отчеты о социальном воздействии, отзывы участников и истории успеха]"
+                 data-en="[Detailed reports on social impact, participant feedback and success stories will be placed here]"
+                 data-me="[Detaljni izveštaji o društvenom uticaju, povratne informacije učesnika i priče o uspehu će biti postavljeni ovde]">[Здесь будут размещены детальные отчеты о социальном воздействии, отзывы участников и истории успеха]</div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Наша команда" data-en="Our Team" data-me="Naš Tim">Наша команда</h2>
+            <p class="section-subtitle" data-ru="Профессионалы, увлеченные развитием сообщества и межкультурным диалогом"
+               data-en="Professionals passionate about community development and intercultural dialogue"
+               data-me="Profesionalci strastveni za razvoj zajednice i međukulturni dijalog">Профессионалы, увлеченные развитием сообщества и межкультурным диалогом</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo" data-ru="[Фото]" data-en="[Photo]" data-me="[Foto]">[Фото]</div>
+                    <h4 data-ru="Имя Фамилия" data-en="Name Surname" data-me="Ime Prezime">Имя Фамилия</h4>
+                    <p data-ru="Руководитель центра" data-en="Center Director" data-me="Direktor Centra">Руководитель центра</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" data-ru="[Фото]" data-en="[Photo]" data-me="[Foto]">[Фото]</div>
+                    <h4 data-ru="Имя Фамилия" data-en="Name Surname" data-me="Ime Prezime">Имя Фамилия</h4>
+                    <p data-ru="Координатор программ" data-en="Program Coordinator" data-me="Koordinator Programa">Координатор программ</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" data-ru="[Фото]" data-en="[Photo]" data-me="[Foto]">[Фото]</div>
+                    <h4 data-ru="Имя Фамилия" data-en="Name Surname" data-me="Ime Prezime">Имя Фамилия</h4>
+                    <p data-ru="Педагог STEAM" data-en="STEAM Educator" data-me="STEAM Edukator">Педагог STEAM</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo" data-ru="[Фото]" data-en="[Photo]" data-me="[Foto]">[Фото]</div>
+                    <h4 data-ru="Имя Фамилия" data-en="Name Surname" data-me="Ime Prezime">Имя Фамилия</h4>
+                    <p data-ru="Художественный руководитель" data-en="Art Director" data-me="Umetnički Direktor">Художественный руководитель</p>
+                </div>
+            </div>
+            
+            <div class="placeholder placeholder-medium" data-ru="[Здесь будет размещена информация о волонтерах, совете директоров и консультативных органах]"
+                 data-en="[Information about volunteers, board of directors and advisory bodies will be placed here]"
+                 data-me="[Ovde će biti postavljene informacije o volonterima, upravnom odboru i savetodavnim telima]">[Здесь будет размещена информация о волонтерах, совете директоров и консультативных органах]</div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Наши партнеры" data-en="Our Partners" data-me="Naši Partneri">Наши партнеры</h2>
+            <p class="section-subtitle" data-ru="Сотрудничаем с ведущими организациями для достижения общих целей"
+               data-en="We cooperate with leading organizations to achieve common goals"
+               data-me="Sarađujemo sa vodećim organizacijama za postizanje zajedničkih ciljeva">Сотрудничаем с ведущими организациями для достижения общих целей</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 data-ru="Образовательные партнеры" data-en="Educational Partners" data-me="Obrazovni Partneri">Образовательные партнеры</h3>
+                    <div class="placeholder placeholder-small" data-ru="[Логотипы: Adriatic Open Educational Center, государственные школы Бара, языковые центры]"
+                         data-en="[Logos: Adriatic Open Educational Center, Bar public schools, language centers]"
+                         data-me="[Logotipi: Adriatic Open Educational Center, javne škole u Baru, jezički centri]">[Логотипы: Adriatic Open Educational Center, государственные школы Бара, языковые центры]</div>
+                </div>
+                <div class="card">
+                    <h3 data-ru="Культурные партнеры" data-en="Cultural Partners" data-me="Kulturni Partneri">Культурные партнеры</h3>
+                    <div class="placeholder placeholder-small" data-ru="[Логотипы: муниципальные культурные центры, музей Дворец короля Николы, Собор Св. Иоанна Владимира]"
+                         data-en="[Logos: municipal cultural centers, King Nikola Palace Museum, St. John Vladimir Cathedral]"
+                         data-me="[Logotipi: opštinski kulturni centri, Muzej Dvora kralja Nikole, Saborna crkva Sv. Jovana Vladimira]">[Логотипы: муниципальные культурные центры, музей Дворец короля Николы, Собор Св. Иоанна Владимира]</div>
+                </div>
+                <div class="card">
+                    <h3 data-ru="Международные партнеры" data-en="International Partners" data-me="Međunarodni Partneri">Международные партнеры</h3>
+                    <div class="placeholder placeholder-small" data-ru="[Логотипы: Erasmus+, международные фонды, культурные организации]"
+                         data-en="[Logos: Erasmus+, international foundations, cultural organizations]"
+                         data-me="[Logotipi: Erasmus+, međunarodne fondacije, kulturne organizacije]">[Логотипы: Erasmus+, международные фонды, культурные организации]</div>
+                </div>
+            </div>
+            
+            <div class="placeholder placeholder-medium" data-ru="[Здесь будет размещена информация о возможностях партнерства и формах сотрудничества]"
+                 data-en="[Information about partnership opportunities and forms of cooperation will be placed here]"
+                 data-me="[Ovde će biti postavljene informacije o mogućnostima partnerstva i oblicima saradnje]">[Здесь будет размещена информация о возможностях партнерства и формах сотрудничества]</div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</h2>
+            <p class="section-subtitle" data-ru="Публикации и репортажи о деятельности нашего центра"
+               data-en="Publications and reports about our center's activities"
+               data-me="Publikacije i izveštaji o aktivnostima našeg centra">Публикации и репортажи о деятельности нашего центра</p>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-date" data-ru="15 января 2025" data-en="January 15, 2025" data-me="15. januar 2025.">15 января 2025</div>
+                    <div class="media-title" data-ru="'Хор Зима' открывает новые программы для детей" data-en="'Hor Zima' opens new programs for children" data-me="'Hor Zima' otvara nove programe za decu">"Хор Зима" открывает новые программы для детей</div>
+                    <div class="media-source" data-ru="Газета 'Вијести', Бар" data-en="'Vijesti' Newspaper, Bar" data-me="List 'Vijesti', Bar">Газета "Вијести", Бар</div>
+                </div>
+                <div class="media-item">
+                    <div class="media-date" data-ru="8 января 2025" data-en="January 8, 2025" data-me="8. januar 2025.">8 января 2025</div>
+                    <div class="media-title" data-ru="Межкультурный диалог в Баре: успехи центра 'Хор Зима'" data-en="Intercultural dialogue in Bar: successes of 'Hor Zima' center" data-me="Međukulturni dijalog u Baru: uspesi centra 'Hor Zima'">Межкультурный диалог в Баре: успехи центра "Хор Зима"</div>
+                    <div class="media-source" data-ru="Радио Бар" data-en="Radio Bar" data-me="Radio Bar">Радио Бар</div>
+                </div>
+                <div class="media-item">
+                    <div class="media-date" data-ru="2 января 2025" data-en="January 2, 2025" data-me="2. januar 2025.">2 января 2025</div>
+                    <div class="media-title" data-ru="STEAM-образование для детей: инновационный подход центра 'Хор Зима'" data-en="STEAM education for children: innovative approach of 'Hor Zima' center" data-me="STEAM obrazovanje za decu: inovativni pristup centra 'Hor Zima'">STEAM-образование для детей: инновационный подход центра "Хор Зима"</div>
+                    <div class="media-source" data-ru="Портал 'Монтенегро Данас'" data-en="'Montenegro Danas' Portal" data-me="Portal 'Crna Gora Danas'">Портал "Монтенегро Данас"</div>
+                </div>
+                <div class="media-item">
+                    <div class="media-date" data-ru="25 декабря 2024" data-en="December 25, 2024" data-me="25. decembar 2024.">25 декабря 2024</div>
+                    <div class="media-title" data-ru="Русскоязычное сообщество в Черногории: роль центра 'Хор Зима'" data-en="Russian-speaking community in Montenegro: the role of 'Hor Zima' center" data-me="Rusko-govoreća zajednica u Crnoj Gori: uloga centra 'Hor Zima'">Русскоязычное сообщество в Черногории: роль центра "Хор Зима"</div>
+                    <div class="media-source" data-ru="Телеканал 'ТВ Будва'" data-en="'TV Budva' Channel" data-me="TV kanal 'TV Budva'">Телеканал "ТВ Будва"</div>
+                </div>
+                <div class="media-item">
+                    <div class="media-date" data-ru="18 декабря 2024" data-en="December 18, 2024" data-me="18. decembar 2024.">18 декабря 2024</div>
+                    <div class="media-title" data-ru="Языковые обмены: новый формат интеграции в Баре" data-en="Language exchanges: new integration format in Bar" data-me="Jezik razmene: novi format integracije u Baru">Языковые обмены: новый формат интеграции в Баре</div>
+                    <div class="media-source" data-ru="Журнал 'Култура'" data-en="'Kultura' Magazine" data-me="Časopis 'Kultura'">Журнал "Култура"</div>
+                </div>
+                <div class="media-item">
+                    <div class="media-date" data-ru="10 декабря 2024" data-en="December 10, 2024" data-me="10. decembar 2024.">10 декабря 2024</div>
+                    <div class="media-title" data-ru="Детские программы центра 'Хор Зима': творчество и развитие" data-en="Children's programs of 'Hor Zima' center: creativity and development" data-me="Dečiji programi centra 'Hor Zima': kreativnost i razvoj">Детские программы центра "Хор Зима": творчество и развитие</div>
+                    <div class="media-source" data-ru="Портал 'Бар Инфо'" data-en="'Bar Info' Portal" data-me="Portal 'Bar Info'">Портал "Бар Инфо"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Наши награды" data-en="Our Awards" data-me="Naše Nagrade">Наши награды</h2>
+            <p class="section-subtitle" data-ru="Признание нашей работы в области образования и культуры"
+               data-en="Recognition of our work in education and culture"
+               data-me="Priznanje našeg rada u oblasti obrazovanja i kulture">Признание нашей работы в области образования и культуры</p>
+            
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-title" data-ru="Лучший образовательный проект года" data-en="Best Educational Project of the Year" data-me="Najbolji obrazovni projekat godine">Лучший образовательный проект года</div>
+                    <div class="award-category" data-ru="Грамота" data-en="Certificate" data-me="Priznanje">Грамота</div>
+                    <div class="award-year" data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🥇</div>
+                    <div class="award-title" data-ru="Первое место на фестивале детского творчества" data-en="First place at children's creativity festival" data-me="Prvo mesto na festivalu dečije kreativnosti">Первое место на фестивале детского творчества</div>
+                    <div class="award-category" data-ru="Конкурс" data-en="Competition" data-me="Takmičenje">Конкурс</div>
+                    <div class="award-year" data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🏅</div>
+                    <div class="award-title" data-ru="Сертификат качества образовательных услуг" data-en="Certificate of Quality of Educational Services" data-me="Sertifikat kvaliteta obrazovnih usluga">Сертификат качества образовательных услуг</div>
+                    <div class="award-category" data-ru="Сертификат" data-en="Certificate" data-me="Sertifikat">Сертификат</div>
+                    <div class="award-year" data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🎖️</div>
+                    <div class="award-title" data-ru="Приз за инновации в культурном образовании" data-en="Award for Innovation in Cultural Education" data-me="Nagrada za inovacije u kulturnom obrazovanju">Приз за инновации в культурном образовании</div>
+                    <div class="award-category" data-ru="Приз" data-en="Award" data-me="Nagrada">Приз</div>
+                    <div class="award-year" data-ru="2023" data-en="2023" data-me="2023">2023</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-title" data-ru="Второе место на международном конкурсе проектов" data-en="Second place at international project competition" data-me="Drugo mesto na međunarodnom takmičenju projekata">Второе место на международном конкурсе проектов</div>
+                    <div class="award-category" data-ru="Конкурс" data-en="Competition" data-me="Takmičenje">Конкурс</div>
+                    <div class="award-year" data-ru="2023" data-en="2023" data-me="2023">2023</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🥉</div>
+                    <div class="award-title" data-ru="Бронзовая медаль на фестивале искусств" data-en="Bronze medal at arts festival" data-me="Bronzana medalja na festivalu umetnosti">Бронзовая медаль на фестивале искусств</div>
+                    <div class="award-category" data-ru="Фестиваль" data-en="Festival" data-me="Festival">Фестиваль</div>
+                    <div class="award-year" data-ru="2023" data-en="2023" data-me="2023">2023</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-ru="Свяжитесь с нами" data-en="Contact Us" data-me="Kontaktirajte Nas">Свяжитесь с нами</h2>
+            <p class="section-subtitle" data-ru="Готовы присоединиться к нашему сообществу? Свяжитесь с нами!"
+               data-en="Ready to join our community? Contact us!"
+               data-me="Spremni da se pridružite našoj zajednici? Kontaktirajte nas!">Готовы присоединиться к нашему сообществу? Свяжитесь с нами!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-ru="Контактная информация" data-en="Contact Information" data-me="Kontakt Informacije">Контактная информация</h3>
+                    <div class="placeholder placeholder-small">
+                        <strong data-ru="Адрес:" data-en="Address:" data-me="Adresa:">Адрес:</strong> <span data-ru="[Полный адрес в Баре, Черногория]" data-en="[Full address in Bar, Montenegro]" data-me="[Puna adresa u Baru, Crna Gora]">[Полный адрес в Баре, Черногория]</span><br>
+                        <strong data-ru="Телефон:" data-en="Phone:" data-me="Telefon:">Телефон:</strong> <span data-ru="[Номер телефона]" data-en="[Phone number]" data-me="[Broj telefona]">[Номер телефона]</span><br>
+                        <strong data-ru="Email:" data-en="Email:" data-me="Email:">Email:</strong> <span data-ru="[Электронная почта]" data-en="[Email address]" data-me="[Email adresa]">[Электронная почта]</span><br>
+                        <strong data-ru="Веб-сайт:" data-en="Website:" data-me="Veb sajt:">Веб-сайт:</strong> <span data-ru="[URL сайта]" data-en="[Website URL]" data-me="[URL sajta]">[URL сайта]</span>
+                    </div>
+                    
+                    <h3 data-ru="Социальные сети" data-en="Social Networks" data-me="Društvene Mreže">Социальные сети</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/horzima" class="social-icon social-telegram" title="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                        <a href="https://facebook.com/horzima" class="social-icon social-facebook" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/horzima" class="social-icon social-instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@horzima" class="social-icon social-youtube" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    
+                    <h3 data-ru="Часы работы" data-en="Working Hours" data-me="Radno Vreme">Часы работы</h3>
+                    <div class="placeholder placeholder-small" data-ru="[Расписание работы центра и программ]"
+                         data-en="[Center working hours and program schedules]"
+                         data-me="[Radno vreme centra i raspored programa]">[Расписание работы центра и программ]</div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 data-ru="Отправить сообщение" data-en="Send Message" data-me="Pošaljite Poruku">Отправить сообщение</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name" data-ru="Имя *" data-en="Name *" data-me="Ime *">Имя *</label>
+                            <input type="text" id="name" name="name" required 
+                                   data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" data-me-placeholder="Vaše ime" 
+                                   placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-ru="Email *" data-en="Email *" data-me="Email *">Email *</label>
+                            <input type="email" id="email" name="email" required 
+                                   data-ru-placeholder="your@email.com" data-en-placeholder="your@email.com" data-me-placeholder="your@email.com" 
+                                   placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-ru="Тема" data-en="Subject" data-me="Tema">Тема</label>
+                            <input type="text" id="subject" name="subject" 
+                                   data-ru-placeholder="Тема сообщения" data-en-placeholder="Message subject" data-me-placeholder="Tema poruke" 
+                                   placeholder="Тема сообщения">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-ru="Сообщение *" data-en="Message *" data-me="Poruka *">Сообщение *</label>
+                            <textarea id="message" name="message" required 
+                                      data-ru-placeholder="Ваше сообщение..." data-en-placeholder="Your message..." data-me-placeholder="Vaša poruka..." 
+                                      placeholder="Ваше сообщение..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" data-ru="Отправить" data-en="Send" data-me="Pošalji">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 data-ru="О центре" data-en="About Center" data-me="O Centru">О центре</h4>
+                    <ul>
+                        <li><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
+                        <li><a href="#team" data-ru="Команда" data-en="Team" data-me="Tim">Команда</a></li>
+                        <li><a href="#impact" data-ru="Результаты" data-en="Impact" data-me="Rezultati">Результаты</a></li>
+                        <li><a href="#partners" data-ru="Партнеры" data-en="Partners" data-me="Partneri">Партнеры</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Программы" data-en="Programs" data-me="Programi">Программы</h4>
+                    <ul>
+                        <li><a href="#programs" data-ru="Все программы" data-en="All Programs" data-me="Svi Programi">Все программы</a></li>
+                        <li><a href="#" data-ru="Детские кружки" data-en="Children's Clubs" data-me="Dečiji Klubovi">Детские кружки</a></li>
+                        <li><a href="#" data-ru="Культурные события" data-en="Cultural Events" data-me="Kulturni Događaji">Культурные события</a></li>
+                        <li><a href="#" data-ru="Языковые обмены" data-en="Language Exchanges" data-me="Jezik Razmene">Языковые обмены</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Ресурсы" data-en="Resources" data-me="Resursi">Ресурсы</h4>
+                    <ul>
+                        <li><a href="#media" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</a></li>
+                        <li><a href="#awards" data-ru="Награды" data-en="Awards" data-me="Nagrade">Награды</a></li>
+                        <li><a href="#" data-ru="Фото и видео" data-en="Photos & Videos" data-me="Foto i Video">Фото и видео</a></li>
+                        <li><a href="#" data-ru="Публикации" data-en="Publications" data-me="Publikacije">Публикации</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-ru="Поддержка" data-en="Support" data-me="Podrška">Поддержка</h4>
+                    <ul>
+                        <li><a href="#" data-ru="Сделать пожертвование" data-en="Make a Donation" data-me="Učinite Donaciju">Сделать пожертвование</a></li>
+                        <li><a href="#" data-ru="Стать волонтером" data-en="Become a Volunteer" data-me="Postanite Volonter">Стать волонтером</a></li>
+                        <li><a href="#" data-ru="Партнерство" data-en="Partnership" data-me="Partnerstvo">Партнерство</a></li>
+                        <li><a href="#contact" data-ru="Контакты" data-en="Contact" data-me="Kontakt">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-ru="&copy; 2025 Community Center 'Хор Зима'. Все права защищены." 
+                   data-en="&copy; 2025 Community Center 'Hor Zima'. All rights reserved." 
+                   data-me="&copy; 2025 Community Center 'Hor Zima'. Sva prava zadržana.">&copy; 2025 Community Center "Хор Зима". Все права защищены.</p>
+                <p data-ru="НКО, зарегистрированная в Черногории" 
+                   data-en="NGO registered in Montenegro" 
+                   data-me="NVO registrovana u Crnoj Gori">НКО, зарегистрированная в Черногории</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const body = document.body;
+            
+            // Language switching function
+            function switchLanguage(lang) {
+                // Update body class
+                body.className = `lang-${lang}`;
+                
+                // Update active button
+                langButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-lang') === lang) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Update document title
+                const titleElement = document.querySelector('title');
+                const newTitle = titleElement.getAttribute(`data-${lang}`);
+                if (newTitle) {
+                    titleElement.textContent = newTitle;
+                }
+                
+                // Update all elements with data attributes
+                const elements = document.querySelectorAll(`[data-${lang}]`);
+                elements.forEach(element => {
+                    const text = element.getAttribute(`data-${lang}`);
+                    if (text) {
+                        element.textContent = text;
+                    }
+                });
+                
+                // Update placeholders
+                const inputs = document.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    const placeholder = input.getAttribute(`data-${lang}-placeholder`);
+                    if (placeholder) {
+                        input.placeholder = placeholder;
+                    }
+                });
+                
+                // Update HTML lang attribute
+                document.documentElement.lang = lang === 'me' ? 'sr' : lang;
+            }
+            
+            // Add click event listeners to language buttons
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+            
+            // Initialize with Russian language
+            switchLanguage('ru');
+        });
+    </script>
+</body>
+</html>
