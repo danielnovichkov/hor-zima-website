@@ -1114,11 +1114,17 @@
     <!-- JavaScript for Language Switching -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing language switcher...');
+            
             const langButtons = document.querySelectorAll('.lang-btn');
+            console.log('Found language buttons:', langButtons.length);
+            
             const body = document.body;
             
             // Language switching function
             function switchLanguage(lang) {
+                console.log('Switching to language:', lang);
+                
                 // Update body class
                 body.className = `lang-${lang}`;
                 
@@ -1139,6 +1145,8 @@
                 
                 // Update all elements with data attributes
                 const elements = document.querySelectorAll(`[data-${lang}]`);
+                console.log('Found elements to update:', elements.length);
+                
                 elements.forEach(element => {
                     const text = element.getAttribute(`data-${lang}`);
                     if (text) {
@@ -1157,17 +1165,21 @@
                 
                 // Update HTML lang attribute
                 document.documentElement.lang = lang === 'me' ? 'sr' : lang;
+                
+                console.log('Language switch completed');
             }
             
             // Add click event listeners to language buttons
             langButtons.forEach(btn => {
                 btn.addEventListener('click', function() {
+                    console.log('Language button clicked:', this.getAttribute('data-lang'));
                     const lang = this.getAttribute('data-lang');
                     switchLanguage(lang);
                 });
             });
             
             // Initialize with Russian language
+            console.log('Initializing with Russian language...');
             switchLanguage('ru');
         });
     </script>
