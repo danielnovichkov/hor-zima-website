@@ -10,6 +10,11 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts - Inter for headings and menu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -18,10 +23,20 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+        }
+        
+        /* Typography for headings and menu */
+        h1, h2, h3, h4, h5, h6, nav a, .logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            font-weight: 700;
         }
         
         .container {
@@ -56,23 +71,23 @@
         
         .logo-icon {
             position: relative;
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .snowflake {
-            width: 32px;
-            height: 32px;
+            width: 48px;
+            height: 48px;
             position: relative;
             color: #87ceeb; /* Light blue like in logo */
         }
         
         .snowflake::before {
             content: '❄';
-            font-size: 32px;
+            font-size: 48px;
             position: absolute;
             top: 0;
             left: 0;
@@ -717,7 +732,7 @@
                         </div>
                     </div>
                     <div>
-                        <div data-ru="Хор Зима" data-en="Hor Zima" data-me="Hor Zima">Хор Зима</div>
+                        <div data-ru="Зима" data-en="Zima" data-me="Zima">Зима</div>
                         <div class="logo-subtitle" data-ru="Комьюнити центр" data-en="Community Center" data-me="Komjuniti Centar">Комьюнити центр</div>
                     </div>
                 </div>
@@ -746,9 +761,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1 data-ru="Комьюнити центр 'Хор Зима'" 
-                data-en="Cultural and Educational Center 'Hor Zima'" 
-                data-me="Kulturno-obrazovni centar 'Hor Zima'">Комьюнити центр "Хор Зима"</h1>
+            <h1 data-ru="Комьюнити центр 'Зима'" 
+                data-en="Cultural and Educational Center 'Zima'" 
+                data-me="Kulturno-obrazovni centar 'Zima'">Комьюнити центр "Зима"</h1>
             <p data-ru="Объединяем традиции и инновации для развития многоязычного сообщества в Баре, Черногория"
                data-en="Uniting traditions and innovations for the development of a multilingual community in Bar, Montenegro"
                data-me="Ujedinjujemo tradiciju i inovacije za razvoj multilingvalne zajednice u Baru, Crna Gora">Объединяем традиции и инновации для развития многоязычного сообщества в Баре, Черногория</p>
@@ -803,6 +818,24 @@
                data-me="Raznovrsni obrazovni i kulturni programi za sve uzraste">Разнообразные образовательные и культурные программы для всех возрастов</p>
             
             <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото взрослого хора]" data-en="[Adult Choir Photo]" data-me="[Odrasli Hor Foto]">[Фото взрослого хора]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Взрослый хор 'Зима'" data-en="Adult Choir 'Zima'" data-me="Odrasli Hor 'Zima'">Взрослый хор "Зима"</h4>
+                        <p data-ru="Классическая и современная хоровая музыка, выступления на фестивалях и концертах"
+                           data-en="Classical and modern choral music, performances at festivals and concerts"
+                           data-me="Klasična i moderna horovska muzika, nastupi na festivalima i koncertima">Классическая и современная хоровая музыка, выступления на фестивалях и концертах</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image" data-ru="[Фото детского хора]" data-en="[Children's Choir Photo]" data-me="[Dečiji Hor Foto]">[Фото детского хора]</div>
+                    <div class="program-content">
+                        <h4 data-ru="Детский хор 'Зима'" data-en="Children's Choir 'Zima'" data-me="Dečiji Hor 'Zima'">Детский хор "Зима"</h4>
+                        <p data-ru="Музыкальное развитие детей 6-14 лет, народные песни и современный репертуар"
+                           data-en="Musical development of children 6-14 years old, folk songs and modern repertoire"
+                           data-me="Muzički razvoj dece 6-14 godina, narodne pesme i moderni repertoar">Музыкальное развитие детей 6-14 лет, народные песни и современный репертуар</p>
+                    </div>
+                </div>
                 <div class="program-card">
                     <div class="program-image" data-ru="[Фото STEAM-клуба]" data-en="[STEAM Club Photo]" data-me="[STEAM Klub Foto]">[Фото STEAM-клуба]</div>
                     <div class="program-content">
@@ -879,7 +912,7 @@
                     <div class="stat-label" data-ru="Активных участников" data-en="Active Participants" data-me="Aktivnih Učesnika">Активных участников</div>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">6</span>
+                    <span class="stat-number">8</span>
                     <div class="stat-label" data-ru="Основных программ" data-en="Main Programs" data-me="Glavnih Programa">Основных программ</div>
                 </div>
                 <div class="stat-item">
