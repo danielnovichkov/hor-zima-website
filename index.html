@@ -190,6 +190,87 @@
             min-height: 60vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Polaroid Photos */
+        .polaroid-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .polaroid {
+            position: absolute;
+            background: white;
+            padding: 10px 10px 30px 10px;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transform: rotate(var(--rotation));
+            transition: transform 0.3s ease;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(var(--rotation)) scale(1.05);
+            z-index: 10;
+        }
+        
+        .polaroid-photo {
+            width: 120px;
+            height: 90px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+        
+        .polaroid-caption {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            color: #333;
+            text-align: left;
+            line-height: 1.2;
+        }
+        
+        .polaroid:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            --rotation: -8deg;
+        }
+        
+        .polaroid:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            --rotation: 12deg;
+        }
+        
+        .polaroid:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            --rotation: -5deg;
+        }
+        
+        .polaroid:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            --rotation: 15deg;
+        }
+        
+        /* Hero content overlay */
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
@@ -633,6 +714,35 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+            
+            /* Tablet Polaroid adjustments */
+            .polaroid {
+                transform: scale(0.7) rotate(var(--rotation));
+            }
+            
+            .polaroid:hover {
+                transform: scale(0.75) rotate(var(--rotation));
+            }
+            
+            .polaroid:nth-child(1) {
+                top: 10%;
+                left: 5%;
+            }
+            
+            .polaroid:nth-child(2) {
+                top: 15%;
+                right: 5%;
+            }
+            
+            .polaroid:nth-child(3) {
+                bottom: 15%;
+                left: 10%;
+            }
+            
+            .polaroid:nth-child(4) {
+                bottom: 20%;
+                right: 5%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -659,6 +769,25 @@
             .media-item,
             .award-item {
                 padding: 1.5rem;
+            }
+            
+            /* Mobile Polaroid adjustments */
+            .polaroid {
+                transform: scale(0.5) rotate(var(--rotation));
+            }
+            
+            .polaroid:hover {
+                transform: scale(0.55) rotate(var(--rotation));
+            }
+            
+            .polaroid-photo {
+                width: 80px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .polaroid-caption {
+                font-size: 0.6rem;
             }
         }
         
@@ -759,6 +888,46 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <!-- Polaroid Photos Background -->
+        <div class="polaroid-container">
+            <div class="polaroid">
+                <div class="polaroid-photo">🎵</div>
+                <div class="polaroid-caption">
+                    <div data-ru="Концерт в Баре" data-en="Concert in Bar" data-me="Koncert u Baru">Концерт в Баре</div>
+                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                    <div data-ru="Взрослый хор" data-en="Adult Choir" data-me="Odrasli Hor">Взрослый хор</div>
+                    <div data-ru="🎤 Голоса как один!" data-en="🎤 Voices as one!" data-me="🎤 Glasovi kao jedan!">🎤 Голоса как один!</div>
+                </div>
+            </div>
+            <div class="polaroid">
+                <div class="polaroid-photo">🎭</div>
+                <div class="polaroid-caption">
+                    <div data-ru="Фестиваль культур" data-en="Culture Festival" data-me="Festival kulture">Фестиваль культур</div>
+                    <div data-ru="2023" data-en="2023" data-me="2023">2023</div>
+                    <div data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
+                    <div data-ru="🌟 Маленькие звезды!" data-en="🌟 Little stars!" data-me="🌟 Male zvezde!">🌟 Маленькие звезды!</div>
+                </div>
+            </div>
+            <div class="polaroid">
+                <div class="polaroid-photo">🎨</div>
+                <div class="polaroid-caption">
+                    <div data-ru="Арт-мастерская" data-en="Art Workshop" data-me="Umetnička Radionica">Арт-мастерская</div>
+                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                    <div data-ru="Дети 5-12 лет" data-en="Kids 5-12" data-me="Deca 5-12">Дети 5-12 лет</div>
+                    <div data-ru="🎨 Творческий беспорядок!" data-en="🎨 Creative mess!" data-me="🎨 Kreativni nered!">🎨 Творческий беспорядок!</div>
+                </div>
+            </div>
+            <div class="polaroid">
+                <div class="polaroid-photo">🤖</div>
+                <div class="polaroid-caption">
+                    <div data-ru="STEAM-клуб" data-en="STEAM Club" data-me="STEAM Klub">STEAM-клуб</div>
+                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
+                    <div data-ru="Юные инженеры" data-en="Young Engineers" data-me="Mladi Inženjeri">Юные инженеры</div>
+                    <div data-ru="⚡ Роботы оживают!" data-en="⚡ Robots come alive!" data-me="⚡ Roboti oživljavaju!">⚡ Роботы оживают!</div>
+                </div>
+            </div>
+        </div>
+        
         <div class="container">
             <h1 data-ru="Комьюнити центр 'ZIMA'" 
                 data-en="Cultural and Educational Center 'Zima'" 
@@ -1221,7 +1390,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Language Switching -->
+    <!-- JavaScript for Language Switching and Polaroid Interactions -->
     <script>
         function switchLang(lang) {
             console.log('Switching to:', lang);
@@ -1266,9 +1435,38 @@
             console.log('Language switched to:', lang);
         }
         
+        // Polaroid photo interactions
+        function initPolaroids() {
+            var polaroids = document.querySelectorAll('.polaroid');
+            
+            polaroids.forEach(function(polaroid) {
+                polaroid.addEventListener('click', function() {
+                    // Add a subtle bounce animation
+                    this.style.transform = this.style.transform + ' scale(1.1)';
+                    setTimeout(() => {
+                        this.style.transform = this.style.transform.replace(' scale(1.1)', '');
+                    }, 200);
+                    
+                    // Optional: Show a tooltip or modal with more info
+                    console.log('Polaroid clicked:', this.querySelector('.polaroid-caption').textContent);
+                });
+                
+                // Add subtle floating animation
+                var rotation = getComputedStyle(polaroid).getPropertyValue('--rotation');
+                var floatOffset = Math.random() * 10 - 5;
+                
+                setInterval(function() {
+                    var currentTransform = polaroid.style.transform;
+                    var newY = Math.sin(Date.now() * 0.001 + floatOffset) * 3;
+                    polaroid.style.transform = currentTransform.replace(/translateY\([^)]*\)/, '') + ' translateY(' + newY + 'px)';
+                }, 50);
+            });
+        }
+        
         // Initialize when page loads
         window.onload = function() {
             switchLang('ru');
+            initPolaroids();
         };
     </script>
 </body>
