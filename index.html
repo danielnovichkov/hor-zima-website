@@ -1819,6 +1819,134 @@
             color: #64748b;
             line-height: 1.6;
         }
+        
+        /* Schedule Widget */
+        .schedule-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .schedule-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .schedule-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .schedule-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .schedule-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .schedule-date {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        
+        .schedule-event {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .schedule-event:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .event-time {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .schedule-info {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .schedule-address {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .schedule-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .schedule-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .schedule-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .schedule-social a:hover {
+            color: #fbbf24;
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body class="lang-ru">
@@ -1864,28 +1992,16 @@
                     <div>
                         <div data-ru="ZIMA" data-en="Zima" data-me="Zima">ZIMA</div>
                         <div class="logo-subtitle" data-ru="Комьюнити центр" data-en="Community Center" data-me="Komjuniti Centar">Комьюнити центр</div>
-                        <div class="logo-slogan" data-ru="Музыка объединяет" data-en="Music Unites" data-me="Muzika Ujedinjuje">Музыка объединяет</div>
                     </div>
                 </div>
                 
                 <nav>
                     <ul>
                         <li class="nav-item"><a href="#home" data-ru="Главная" data-en="Home" data-me="Početna">Главная</a></li>
-                        <li class="nav-item"><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
                         <li class="nav-item has-dropdown">
-                            <a href="#directions" data-ru="Деятельность" data-en="Activities" data-me="Aktivnosti">Деятельность</a>
+                            <a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a>
                             <div class="dropdown-menu">
-                                <a href="#directions" data-ru="Направления работы" data-en="Areas of Work" data-me="Pravci Rada">Направления работы</a>
-                                <a href="#news" data-ru="Новости и события" data-en="News and Events" data-me="Vesti i Događaji">Новости и события</a>
-                                <a href="#members" data-ru="Лица хора" data-en="Choir Members" data-me="Članovi Hora">Лица хора</a>
-                                <div class="dropdown-divider"></div>
-                                <a href="#programs" data-ru="Программы" data-en="Programs" data-me="Programi">Программы</a>
-                                <a href="#events" data-ru="Мероприятия" data-en="Events" data-me="Događaji">Мероприятия</a>
-                            </div>
-                        </li>
-                        <li class="nav-item has-dropdown">
-                            <a href="#media" data-ru="О центре" data-en="About Center" data-me="O Centru">О центре</a>
-                            <div class="dropdown-menu">
+                                <a href="#about" data-ru="О нашем центре" data-en="About Our Center" data-me="O našem centru">О нашем центре</a>
                                 <a href="#team" data-ru="Команда" data-en="Team" data-me="Tim">Команда</a>
                                 <a href="#partners" data-ru="Партнеры" data-en="Partners" data-me="Partneri">Партнеры</a>
                                 <a href="#media" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</a>
@@ -1893,6 +2009,17 @@
                                 <div class="dropdown-divider"></div>
                                 <a href="#impact" data-ru="Результаты" data-en="Impact" data-me="Rezultati">Результаты</a>
                                 <a href="#faq" data-ru="Частые вопросы" data-en="FAQ" data-me="Česta Pitanja">Частые вопросы</a>
+                            </div>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#directions" data-ru="Активности" data-en="Activities" data-me="Aktivnosti">Активности</a>
+                            <div class="dropdown-menu">
+                                <a href="#directions" data-ru="Направления работы" data-en="Areas of Work" data-me="Pravci Rada">Направления работы</a>
+                                <a href="#news" data-ru="Новости и события" data-en="News and Events" data-me="Vesti i Događaji">Новости и события</a>
+                                <a href="#members" data-ru="Лица хора" data-en="Choir Members" data-me="Članovi Hora">Лица хора</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#programs" data-ru="Программы" data-en="Programs" data-me="Programi">Программы</a>
+                                <a href="#events" data-ru="Мероприятия" data-en="Events" data-me="Događaji">Мероприятия</a>
                             </div>
                         </li>
                         <li class="nav-item has-dropdown">
@@ -1910,7 +2037,6 @@
                 
                 <div class="header-buttons">
                     <a href="#schedule" class="header-button" data-ru="Расписание" data-en="Schedule" data-me="Raspored">Расписание</a>
-                    <a href="#contact" class="header-button secondary" data-ru="Связаться" data-en="Contact Us" data-me="Kontaktirajte Nas">Связаться</a>
                     <div class="language-switcher">
                         <a href="#" class="lang-link active" data-lang="ru" onclick="switchLang('ru'); return false;">RU</a>
                         <a href="#" class="lang-link" data-lang="en" onclick="switchLang('en'); return false;">EN</a>
@@ -2983,6 +3109,115 @@
             });
         }
     </script>
+    
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <div class="schedule-header">
+                <h2 class="schedule-title" data-ru="Расписание мероприятий" data-en="Event Schedule" data-me="Raspored Događaja">Расписание мероприятий</h2>
+                <p class="schedule-subtitle" data-ru="Актуальное расписание на август 2024"
+                   data-en="Current schedule for August 2024"
+                   data-me="Aktuelni raspored za avgust 2024">Актуальное расписание на август 2024</p>
+            </div>
+            
+            <div class="schedule-grid">
+                <!-- Week 1 -->
+                <div class="schedule-card">
+                    <div class="schedule-date" data-ru="5-11 августа" data-en="August 5-11" data-me="5-11. Avgust">5-11 августа</div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">18:00 - 20:00</div>
+                        <div class="event-title" data-ru="Репетиция взрослого хора" data-en="Adult Choir Rehearsal" data-me="Proba Odraslog Hora">Репетиция взрослого хора</div>
+                        <div class="event-description" data-ru="Вторник и четверг" data-en="Tuesday and Thursday" data-me="Utorak i Četvrtak">Вторник и четверг</div>
+                    </div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">17:00 - 18:00</div>
+                        <div class="event-title" data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
+                        <div class="event-description" data-ru="Среда и пятница" data-en="Wednesday and Friday" data-me="Sreda i Petak">Среда и пятница</div>
+                    </div>
+                </div>
+                
+                <!-- Week 2 -->
+                <div class="schedule-card">
+                    <div class="schedule-date" data-ru="12-18 августа" data-en="August 12-18" data-me="12-18. Avgust">12-18 августа</div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">18:00 - 20:00</div>
+                        <div class="event-title" data-ru="Репетиция взрослого хора" data-en="Adult Choir Rehearsal" data-me="Proba Odraslog Hora">Репетиция взрослого хора</div>
+                        <div class="event-description" data-ru="Вторник и четверг" data-en="Tuesday and Thursday" data-me="Utorak i Četvrtak">Вторник и четверг</div>
+                    </div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">17:00 - 18:00</div>
+                        <div class="event-title" data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
+                        <div class="event-description" data-ru="Среда и пятница" data-en="Wednesday and Friday" data-me="Sreda i Petak">Среда и пятница</div>
+                    </div>
+                </div>
+                
+                <!-- Week 3 -->
+                <div class="schedule-card">
+                    <div class="schedule-date" data-ru="19-25 августа" data-en="August 19-25" data-me="19-25. Avgust">19-25 августа</div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">15:00 - 17:00</div>
+                        <div class="event-title" data-ru="Прослушивание детского хора" data-en="Children's Choir Audition" data-me="Audicija Dečijeg Hora">Прослушивание детского хора</div>
+                        <div class="event-description" data-ru="19 августа - специальное событие" data-en="August 19 - Special Event" data-me="19. Avgust - Poseban Događaj">19 августа - специальное событие</div>
+                    </div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">18:00 - 20:00</div>
+                        <div class="event-title" data-ru="Репетиция взрослого хора" data-en="Adult Choir Rehearsal" data-me="Proba Odraslog Hora">Репетиция взрослого хора</div>
+                        <div class="event-description" data-ru="Вторник и четверг" data-en="Tuesday and Thursday" data-me="Utorak i Četvrtak">Вторник и четверг</div>
+                    </div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">17:00 - 18:00</div>
+                        <div class="event-title" data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
+                        <div class="event-description" data-ru="Среда и пятница" data-en="Wednesday and Friday" data-me="Sreda i Petak">Среда и пятница</div>
+                    </div>
+                </div>
+                
+                <!-- Week 4 -->
+                <div class="schedule-card">
+                    <div class="schedule-date" data-ru="26-31 августа" data-en="August 26-31" data-me="26-31. Avgust">26-31 августа</div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">18:00 - 20:00</div>
+                        <div class="event-title" data-ru="Репетиция взрослого хора" data-en="Adult Choir Rehearsal" data-me="Proba Odraslog Hora">Репетиция взрослого хора</div>
+                        <div class="event-description" data-ru="Вторник и четверг" data-en="Tuesday and Thursday" data-me="Utorak i Četvrtak">Вторник и четверг</div>
+                    </div>
+                    
+                    <div class="schedule-event">
+                        <div class="event-time">17:00 - 18:00</div>
+                        <div class="event-title" data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
+                        <div class="event-description" data-ru="Среда и пятница" data-en="Wednesday and Friday" data-me="Sreda i Petak">Среда и пятница</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-info">
+                <div class="schedule-address" data-ru="Все мероприятия проходят по адресу: ул. Свети Никола, 123, Бар" data-en="All events take place at: St. Sveti Nikola, 123, Bar" data-me="Svi događaji se održavaju na adresi: ul. Sveti Nikola, 123, Bar">Все мероприятия проходят по адресу: ул. Свети Никола, 123, Бар</div>
+                
+                <div class="schedule-contacts">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+382 69 123 456</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@zima-center.me</span>
+                    </div>
+                </div>
+                
+                <div class="schedule-social">
+                    <a href="#" title="Viber"><i class="fab fa-viber"></i></a>
+                    <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
