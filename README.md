@@ -60,7 +60,7 @@ Community Center "ZIMA" - это многоязычный комьюнити ц�
 ## 🚀 Быстрый старт
 
 ### Просмотр сайта
-- **Vercel**: https://hor-zima-website-4jpyik0nu-john-smiths-projects-a2c16bf2.vercel.app
+- **Vercel**: https://hor-zima-website-no51kkfss-john-smiths-projects-a2c16bf2.vercel.app ✅
 - **GitHub Pages**: https://danielnovichkov.github.io/hor-zima-website/ (после настройки)
 
 ### Локальная разработка
@@ -108,10 +108,13 @@ hor-zima-website/
 
 ### Ручной деплой
 ```bash
-# Vercel
+# Vercel (автоматический скрипт)
+./deploy.sh
+
+# Vercel (вручную)
 npx vercel --prod
 
-# GitHub Pages (через Actions)
+# GitHub Pages (через настройки)
 git push origin main
 ```
 
