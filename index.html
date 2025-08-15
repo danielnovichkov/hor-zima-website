@@ -164,6 +164,69 @@
             color: white;
         }
         
+        /* Dropdown Menu Styles */
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-item.has-dropdown > a::after {
+            content: '▼';
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-item.has-dropdown:hover > a::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8fafc;
+            color: #1e3a8a;
+            padding-left: 2rem;
+        }
+        
+        .dropdown-menu .dropdown-divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin: 0.5rem 0;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
@@ -1532,6 +1595,48 @@
             .voice-part-title {
                 font-size: 1.5rem;
             }
+            
+            /* Mobile Header adjustments */
+            .header-top {
+                display: none;
+            }
+            
+            .header-main-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .nav-item.has-dropdown .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                background: #f8fafc;
+                margin-top: 0.5rem;
+                border-radius: 5px;
+            }
+            
+            .dropdown-menu a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .header-button {
+                width: 100%;
+                text-align: center;
+            }
         }
         
         /* Placeholder Styles */
@@ -1730,12 +1835,41 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="#home" data-ru="Главная" data-en="Home" data-me="Početna">Главная</a></li>
-                        <li><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
-                        <li><a href="#directions" data-ru="Направления" data-en="Directions" data-me="Pravci">Направления</a></li>
-                        <li><a href="#news" data-ru="Новости" data-en="News" data-me="Vesti">Новости</a></li>
-                        <li><a href="#members" data-ru="Хор" data-en="Choir" data-me="Hor">Хор</a></li>
-                        <li><a href="#contact" data-ru="Контакты" data-en="Contact" data-me="Kontakt">Контакты</a></li>
+                        <li class="nav-item"><a href="#home" data-ru="Главная" data-en="Home" data-me="Početna">Главная</a></li>
+                        <li class="nav-item"><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#directions" data-ru="Деятельность" data-en="Activities" data-me="Aktivnosti">Деятельность</a>
+                            <div class="dropdown-menu">
+                                <a href="#directions" data-ru="Направления работы" data-en="Areas of Work" data-me="Pravci Rada">Направления работы</a>
+                                <a href="#news" data-ru="Новости и события" data-en="News and Events" data-me="Vesti i Događaji">Новости и события</a>
+                                <a href="#members" data-ru="Лица хора" data-en="Choir Members" data-me="Članovi Hora">Лица хора</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#programs" data-ru="Программы" data-en="Programs" data-me="Programi">Программы</a>
+                                <a href="#events" data-ru="Мероприятия" data-en="Events" data-me="Događaji">Мероприятия</a>
+                            </div>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#media" data-ru="О центре" data-en="About Center" data-me="O Centru">О центре</a>
+                            <div class="dropdown-menu">
+                                <a href="#team" data-ru="Команда" data-en="Team" data-me="Tim">Команда</a>
+                                <a href="#partners" data-ru="Партнеры" data-en="Partners" data-me="Partneri">Партнеры</a>
+                                <a href="#media" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</a>
+                                <a href="#awards" data-ru="Награды" data-en="Awards" data-me="Nagrade">Награды</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#impact" data-ru="Результаты" data-en="Impact" data-me="Rezultati">Результаты</a>
+                                <a href="#faq" data-ru="Частые вопросы" data-en="FAQ" data-me="Česta Pitanja">Частые вопросы</a>
+                            </div>
+                        </li>
+                        <li class="nav-item has-dropdown">
+                            <a href="#contact" data-ru="Контакты" data-en="Contact" data-me="Kontakt">Контакты</a>
+                            <div class="dropdown-menu">
+                                <a href="#contact" data-ru="Контакты и адреса" data-en="Contacts and Addresses" data-me="Kontakti i Adrese">Контакты и адреса</a>
+                                <a href="#schedule" data-ru="Расписание" data-en="Schedule" data-me="Raspored">Расписание</a>
+                                <a href="#map" data-ru="Как добраться" data-en="How to Get There" data-me="Kako Doći">Как добраться</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#support" data-ru="Поддержать центр" data-en="Support Center" data-me="Podržati Centar">Поддержать центр</a>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 
