@@ -749,9 +749,9 @@
                     </ul>
                 </nav>
                 <div class="language-switcher">
-                    <a href="#" class="lang-link active" data-lang="ru">RU</a>
-                    <a href="#" class="lang-link" data-lang="en">EN</a>
-                    <a href="#" class="lang-link" data-lang="me">CG</a>
+                    <a href="#" class="lang-link active" data-lang="ru" onclick="alert('RU clicked')">RU</a>
+                    <a href="#" class="lang-link" data-lang="en" onclick="alert('EN clicked')">EN</a>
+                    <a href="#" class="lang-link" data-lang="me" onclick="alert('CG clicked')">CG</a>
                 </div>
             </div>
         </div>
@@ -1223,75 +1223,61 @@
 
     <!-- JavaScript for Language Switching -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing language switcher...');
+        // Simple language switcher
+        function initLanguageSwitcher() {
+            const links = document.querySelectorAll('.lang-link');
             
-            const langLinks = document.querySelectorAll('.lang-link');
-            console.log('Found language links:', langLinks.length);
-            
-            const body = document.body;
-            
-            function switchLanguage(lang) {
-                console.log('Switching to language:', lang);
-                
-                // Update body class
-                body.className = `lang-${lang}`;
-                
-                // Update active link
-                langLinks.forEach(link => {
+            function switchLang(lang) {
+                // Update active state
+                links.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('data-lang') === lang) {
+                    if (link.dataset.lang === lang) {
                         link.classList.add('active');
                     }
                 });
                 
-                // Update document title
-                const titleElement = document.querySelector('title');
-                const newTitle = titleElement.getAttribute(`data-${lang}`);
-                if (newTitle) {
-                    titleElement.textContent = newTitle;
+                // Update title
+                const title = document.querySelector('title');
+                if (title.dataset[lang]) {
+                    title.textContent = title.dataset[lang];
                 }
                 
-                // Update all elements with data attributes
-                const elements = document.querySelectorAll(`[data-${lang}]`);
-                console.log('Found elements to update:', elements.length);
-                
-                elements.forEach(element => {
-                    const text = element.getAttribute(`data-${lang}`);
-                    if (text) {
-                        element.textContent = text;
+                // Update all translatable elements
+                document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                    if (el.dataset[lang]) {
+                        el.textContent = el.dataset[lang];
                     }
                 });
                 
                 // Update placeholders
-                const inputs = document.querySelectorAll('input, textarea');
-                inputs.forEach(input => {
-                    const placeholder = input.getAttribute(`data-${lang}-placeholder`);
-                    if (placeholder) {
-                        input.placeholder = placeholder;
+                document.querySelectorAll('input, textarea').forEach(input => {
+                    if (input.dataset[lang + '-placeholder']) {
+                        input.placeholder = input.dataset[lang + '-placeholder'];
                     }
                 });
                 
-                // Update HTML lang attribute
+                // Update HTML lang
                 document.documentElement.lang = lang === 'me' ? 'sr' : lang;
-                
-                console.log('Language switch completed');
             }
             
-            // Add click event listeners to language links
-            langLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+            // Add click handlers
+            links.forEach(link => {
+                link.onclick = function(e) {
                     e.preventDefault();
-                    console.log('Language link clicked:', this.getAttribute('data-lang'));
-                    const lang = this.getAttribute('data-lang');
-                    switchLanguage(lang);
-                });
+                    switchLang(this.dataset.lang);
+                };
             });
             
-            // Initialize with Russian language
-            console.log('Initializing with Russian language...');
-            switchLanguage('ru');
-        });
+            // Start with Russian
+            switchLang('ru');
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+        } else {
+            initLanguageSwitcher();
+        }
     </script>
 </body>
 </html>
