@@ -529,6 +529,196 @@
             box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
         }
         
+        /* News Section */
+        .news-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 0;
+        }
+        
+        .news-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .news-title {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .news-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .news-image {
+            height: 200px;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+        
+        .news-date {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: #1e3a8a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .news-content {
+            padding: 2rem;
+        }
+        
+        .news-card-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .news-excerpt {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .news-button {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .news-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Choir Members Section */
+        .choir-members-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .members-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .members-title {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .members-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .voice-parts {
+            margin-bottom: 4rem;
+        }
+        
+        .voice-part-title {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .member-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            margin: 0 auto 1rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .member-name {
+            font-size: 1.1rem;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .member-role {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        
         /* Directions Section */
         .directions-section {
             background: white;
@@ -1198,6 +1388,48 @@
             .slider-nav.next {
                 right: 1rem;
             }
+            
+            /* Mobile News adjustments */
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .news-card {
+                margin-bottom: 1rem;
+            }
+            
+            .news-title {
+                font-size: 2rem;
+            }
+            
+            .news-card-title {
+                font-size: 1.3rem;
+            }
+            
+            /* Mobile Members adjustments */
+            .members-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            
+            .member-photo {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .member-name {
+                font-size: 1rem;
+            }
+            
+            .member-role {
+                font-size: 0.8rem;
+            }
+            
+            .voice-part-title {
+                font-size: 1.5rem;
+            }
         }
         
         /* Placeholder Styles */
@@ -1414,6 +1646,302 @@
                data-en="Uniting traditions and innovations for the development of a multilingual community in Bar, Montenegro"
                data-me="Ujedinjujemo tradiciju i inovacije za razvoj multilingvalne zajednice u Baru, Crna Gora">Объединяем традиции и инновации для развития многоязычного сообщества в Баре, Черногория</p>
             <button class="cta-button" data-ru="Присоединиться к нам" data-en="Join Us" data-me="Pridružite nam se">Присоединиться к нам</button>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <div class="news-header">
+                <h2 class="news-title" data-ru="Новости и события" data-en="News and Events" data-me="Vesti i Događaji">Новости и события</h2>
+                <p class="news-subtitle" data-ru="Будьте в курсе последних событий нашего центра"
+                   data-en="Stay up to date with the latest events of our center"
+                   data-me="Budite u toku sa najnovijim događajima našeg centra">Будьте в курсе последних событий нашего центра</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-date">15 августа</div>
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-card-title" data-ru="Прослушивание для детского хора" data-en="Children's Choir Audition" data-me="Audicija za Dečiji Hor">Прослушивание для детского хора</h3>
+                        <p class="news-excerpt" data-ru="Открыт набор в детский хор ZIMA! Приглашаем детей 6-14 лет на прослушивание. Развитие музыкальных способностей, участие в концертах и фестивалях. Не упустите возможность раскрыть талант вашего ребенка!"
+                           data-en="Open enrollment for the ZIMA children's choir! We invite children 6-14 years old to audition. Development of musical abilities, participation in concerts and festivals. Don't miss the opportunity to reveal your child's talent!"
+                           data-me="Otvoren upis u dečiji hor ZIMA! Pozivamo decu 6-14 godina na audiciju. Razvoj muzičkih sposobnosti, učešće na koncertima i festivalima. Ne propustite priliku da otkrijete talenat vašeg deteta!">Открыт набор в детский хор ZIMA! Приглашаем детей 6-14 лет на прослушивание. Развитие музыкальных способностей, участие в концертах и фестивалях. Не упустите возможность раскрыть талант вашего ребенка!</p>
+                        <a href="#contact" class="news-button" data-ru="Записаться" data-en="Register" data-me="Prijavite se">Записаться</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-date">10 августа</div>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-card-title" data-ru="Возобновление репетиций взрослого хора" data-en="Adult Choir Rehearsals Resume" data-me="Nastavak Probe Odraslog Hora">Возобновление репетиций взрослого хора</h3>
+                        <p class="news-excerpt" data-ru="Взрослый хор ZIMA возобновляет репетиции! Приглашаем всех желающих прийти посмотреть и попробовать свои силы. Классическая и современная хоровая музыка, дружеская атмосфера, профессиональный дирижер."
+                           data-en="The adult choir ZIMA resumes rehearsals! We invite everyone to come and watch and try their hand. Classical and modern choral music, friendly atmosphere, professional conductor."
+                           data-me="Odrasli hor ZIMA nastavlja probe! Pozivamo sve zainteresovane da dođu i pogledaju i probaju svoje snage. Klasična i moderna horovska muzika, prijateljska atmosfera, profesionalni dirigent.">Взрослый хор ZIMA возобновляет репетиции! Приглашаем всех желающих прийти посмотреть и попробовать свои силы. Классическая и современная хоровая музыка, дружеская атмосфера, профессиональный дирижер.</p>
+                        <a href="#contact" class="news-button" data-ru="Присоединиться" data-en="Join" data-me="Pridružite se">Присоединиться</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <div class="news-date">5 августа</div>
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-card-title" data-ru="Поиск мужских голосов" data-en="Looking for Male Voices" data-me="Tražimo Muške Glasove">Поиск мужских голосов</h3>
+                        <p class="news-excerpt" data-ru="Хор ZIMA ищет мужские голоса! Можно без опыта и музыкального образования. Главное - любить музыку и желание петь. Мы научим всему необходимому. Присоединяйтесь к нашей музыкальной семье!"
+                           data-en="The ZIMA choir is looking for male voices! No experience or musical education required. The main thing is to love music and want to sing. We will teach everything necessary. Join our musical family!"
+                           data-me="Hor ZIMA traži muške glasove! Može bez iskustva i muzičkog obrazovanja. Glavno je da volite muziku i želite da pevate. Naučićemo sve što je potrebno. Pridružite se našoj muzičkoj porodici!">Хор ZIMA ищет мужские голоса! Можно без опыта и музыкального образования. Главное - любить музыку и желание петь. Мы научим всему необходимому. Присоединяйтесь к нашей музыкальной семье!</p>
+                        <a href="#contact" class="news-button" data-ru="Откликнуться" data-en="Respond" data-me="Odgovorite">Откликнуться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choir Members Section -->
+    <section id="members" class="choir-members-section">
+        <div class="container">
+            <div class="members-header">
+                <h2 class="members-title" data-ru="Лица хора" data-en="Choir Members" data-me="Članovi Hora">Лица хора</h2>
+                <p class="members-subtitle" data-ru="Знакомьтесь с участниками нашего хора"
+                   data-en="Meet the members of our choir"
+                   data-me="Upoznajte članove našeg hora">Знакомьтесь с участниками нашего хора</p>
+            </div>
+            
+            <!-- Soprano -->
+            <div class="voice-parts">
+                <h3 class="voice-part-title" data-ru="Сопрано" data-en="Soprano" data-me="Sopran">Сопрано</h3>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Анна Петрова</div>
+                        <div class="member-role" data-ru="Солистка" data-en="Soloist" data-me="Solistkinja">Солистка</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Мария Иванова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Елена Сидорова</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Ольга Козлова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Татьяна Морозова</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Наталья Волкова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Ирина Соколова</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Светлана Новикова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Людмила Федорова</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Галина Смирнова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Alto -->
+            <div class="voice-parts">
+                <h3 class="voice-part-title" data-ru="Альт" data-en="Alto" data-me="Alt">Альт</h3>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Екатерина Романова</div>
+                        <div class="member-role" data-ru="Солистка" data-en="Soloist" data-me="Solistkinja">Солистка</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Анна Кузнецова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Марина Лебедева</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Ольга Семенова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Татьяна Попова</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Наталья Васильева</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Ирина Зайцева</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Светлана Орлова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Людмила Андреева</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👩</div>
+                        <div class="member-name">Галина Макарова</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tenor -->
+            <div class="voice-parts">
+                <h3 class="voice-part-title" data-ru="Тенор" data-en="Tenor" data-me="Tenor">Тенор</h3>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Александр Иванов</div>
+                        <div class="member-role" data-ru="Солист" data-en="Soloist" data-me="Solista">Солист</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Дмитрий Петров</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Сергей Сидоров</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Андрей Козлов</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Михаил Морозов</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Николай Волков</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Владимир Соколов</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Игорь Новиков</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Алексей Федоров</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Павел Смирнов</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bass -->
+            <div class="voice-parts">
+                <h3 class="voice-part-title" data-ru="Бас" data-en="Bass" data-me="Bas">Бас</h3>
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Виктор Романов</div>
+                        <div class="member-role" data-ru="Солист" data-en="Soloist" data-me="Solista">Солист</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Георгий Кузнецов</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Борис Лебедев</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Константин Семенов</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Артем Попов</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Денис Васильев</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Роман Зайцев</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Евгений Орлов</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Максим Андреев</div>
+                        <div class="member-role" data-ru="Второй голос" data-en="Second Voice" data-me="Drugi Glas">Второй голос</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-photo">👨</div>
+                        <div class="member-name">Антон Макаров</div>
+                        <div class="member-role" data-ru="Первый голос" data-en="First Voice" data-me="Prvi Glas">Первый голос</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
