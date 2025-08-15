@@ -26,7 +26,7 @@
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
         }
         
         /* Typography for headings and menu */
@@ -45,14 +45,15 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - Winter Theme */
         header {
-            background: #1a365d; /* Dark blue matching the logo */
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.1);
         }
         
         .header-content {
@@ -271,6 +272,162 @@
         .hero .container {
             position: relative;
             z-index: 2;
+        }
+        
+        /* Events Slider */
+        .events-slider {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .events-slider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="snow" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23snow)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .events-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .events-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .event-image {
+            height: 200px;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            color: #1e3a8a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .event-content {
+            padding: 2rem;
+        }
+        
+        .event-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .event-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .event-button {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .event-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Directions Section */
+        .directions-section {
+            background: white;
+            padding: 4rem 0;
+        }
+        
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .direction-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .direction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .direction-icon {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .direction-title {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .direction-description {
+            color: #64748b;
+            line-height: 1.6;
         }
         
         .hero h1 {
@@ -536,11 +693,87 @@
             font-size: 0.9rem;
         }
         
-        /* Contact Section */
+        /* Contact Section - Enhanced */
+        .contact-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 0;
+        }
+        
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: #e2e8f0;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #3b82f6;
+            margin-right: 1rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .contact-text {
+            color: #1e3a8a;
+            font-weight: 500;
+        }
+        
+        .contact-text a {
+            color: #3b82f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: #1e3a8a;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .map-placeholder {
+            height: 400px;
+            background: linear-gradient(45deg, #3b82f6, #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
         
         .contact-info {
@@ -886,48 +1119,61 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- Polaroid Photos Background -->
-        <div class="polaroid-container">
-            <div class="polaroid">
-                <div class="polaroid-photo">🎵</div>
-                <div class="polaroid-caption">
-                    <div data-ru="Концерт в Баре" data-en="Concert in Bar" data-me="Koncert u Baru">Концерт в Баре</div>
-                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
-                    <div data-ru="Взрослый хор" data-en="Adult Choir" data-me="Odrasli Hor">Взрослый хор</div>
-                    <div data-ru="🎤 Голоса как один!" data-en="🎤 Voices as one!" data-me="🎤 Glasovi kao jedan!">🎤 Голоса как один!</div>
-                </div>
-            </div>
-            <div class="polaroid">
-                <div class="polaroid-photo">🎭</div>
-                <div class="polaroid-caption">
-                    <div data-ru="Фестиваль культур" data-en="Culture Festival" data-me="Festival kulture">Фестиваль культур</div>
-                    <div data-ru="2023" data-en="2023" data-me="2023">2023</div>
-                    <div data-ru="Детский хор" data-en="Children's Choir" data-me="Dečiji Hor">Детский хор</div>
-                    <div data-ru="🌟 Маленькие звезды!" data-en="🌟 Little stars!" data-me="🌟 Male zvezde!">🌟 Маленькие звезды!</div>
-                </div>
-            </div>
-            <div class="polaroid">
-                <div class="polaroid-photo">🎨</div>
-                <div class="polaroid-caption">
-                    <div data-ru="Арт-мастерская" data-en="Art Workshop" data-me="Umetnička Radionica">Арт-мастерская</div>
-                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
-                    <div data-ru="Дети 5-12 лет" data-en="Kids 5-12" data-me="Deca 5-12">Дети 5-12 лет</div>
-                    <div data-ru="🎨 Творческий беспорядок!" data-en="🎨 Creative mess!" data-me="🎨 Kreativni nered!">🎨 Творческий беспорядок!</div>
-                </div>
-            </div>
-            <div class="polaroid">
-                <div class="polaroid-photo">🤖</div>
-                <div class="polaroid-caption">
-                    <div data-ru="STEAM-клуб" data-en="STEAM Club" data-me="STEAM Klub">STEAM-клуб</div>
-                    <div data-ru="2024" data-en="2024" data-me="2024">2024</div>
-                    <div data-ru="Юные инженеры" data-en="Young Engineers" data-me="Mladi Inženjeri">Юные инженеры</div>
-                    <div data-ru="⚡ Роботы оживают!" data-en="⚡ Robots come alive!" data-me="⚡ Roboti oživljavaju!">⚡ Роботы оживают!</div>
+    <!-- Events Slider Section -->
+    <section id="events" class="events-slider">
+        <div class="container">
+            <div class="events-container">
+                <h2 class="events-title" data-ru="Ближайшие мероприятия" data-en="Upcoming Events" data-me="Predstojeći Događaji">Ближайшие мероприятия</h2>
+                
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-image">
+                            <div class="event-date">19 августа</div>
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title" data-ru="Прослушивание детского хора" data-en="Children's Choir Audition" data-me="Audicija Dečijeg Hora">Прослушивание детского хора</h3>
+                            <p class="event-description" data-ru="Приглашаем детей 6-14 лет на прослушивание в детский хор ZIMA. Развитие музыкальных способностей, участие в концертах и фестивалях."
+                               data-en="We invite children 6-14 years old to audition for the ZIMA children's choir. Development of musical abilities, participation in concerts and festivals."
+                               data-me="Pozivamo decu 6-14 godina na audiciju za dečiji hor ZIMA. Razvoj muzičkih sposobnosti, učešće na koncertima i festivalima.">Приглашаем детей 6-14 лет на прослушивание в детский хор ZIMA. Развитие музыкальных способностей, участие в концертах и фестивалях.</p>
+                            <a href="#contact" class="event-button" data-ru="Записаться" data-en="Register" data-me="Prijavite se">Записаться</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-image">
+                            <div class="event-date">Октябрь</div>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title" data-ru="Выступление в Херцог-Нови" data-en="Performance in Herceg Novi" data-me="Nastup u Herceg Novom">Выступление в Херцог-Нови</h3>
+                            <p class="event-description" data-ru="Взрослый хор ZIMA выступит на фестивале в Херцог-Нови. Классическая и современная хоровая музыка."
+                               data-en="The adult choir ZIMA will perform at the festival in Herceg Novi. Classical and modern choral music."
+                               data-me="Odrasli hor ZIMA nastupiće na festivalu u Herceg Novom. Klasična i moderna horovska muzika.">Взрослый хор ZIMA выступит на фестивале в Херцог-Нови. Классическая и современная хоровая музыка.</p>
+                            <a href="#" class="event-button" data-ru="Подписаться на событие" data-en="Subscribe to Event" data-me="Pretplatite se na Događaj">Подписаться на событие</a>
+                        </div>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-image">
+                            <div class="event-date">Октябрь</div>
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title" data-ru="10 лет хору ZIMA" data-en="10 Years of ZIMA Choir" data-me="10 Godina Hora ZIMA">10 лет хору ZIMA</h3>
+                            <p class="event-description" data-ru="Юбилейный концерт и празднование 10-летия хора ZIMA. Коллаж фотографий за 10 лет, воспоминания, музыка."
+                               data-en="Anniversary concert and celebration of 10 years of the ZIMA choir. Collage of photos over 10 years, memories, music."
+                               data-me="Jubilarni koncert i proslava 10 godina hora ZIMA. Kolaž fotografija tokom 10 godina, sećanja, muzika.">Юбилейный концерт и празднование 10-летия хора ZIMA. Коллаж фотографий за 10 лет, воспоминания, музыка.</p>
+                            <a href="#contact" class="event-button" data-ru="Помочь спонсором" data-en="Help as Sponsor" data-me="Pomoći kao Sponzor">Помочь спонсором</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
             <h1 data-ru="Комьюнити центр 'ZIMA'" 
                 data-en="Cultural and Educational Center 'Zima'" 
@@ -977,92 +1223,79 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
-    <section id="programs" class="section">
+    <!-- Directions Section -->
+    <section id="directions" class="directions-section">
         <div class="container">
-            <h2 class="section-title" data-ru="Наши программы" data-en="Our Programs" data-me="Naši programi">Наши программы</h2>
-            <p class="section-subtitle" data-ru="Разнообразные образовательные и культурные программы для всех возрастов"
-               data-en="Diverse educational and cultural programs for all ages"
-               data-me="Raznovrsni obrazovni i kulturni programi za sve uzraste">Разнообразные образовательные и культурные программы для всех возрастов</p>
+            <h2 class="section-title" data-ru="Направления работы" data-en="Areas of Work" data-me="Pravci Rada">Направления работы</h2>
+            <p class="section-subtitle" data-ru="Основные направления деятельности нашего центра"
+               data-en="Main areas of activity of our center"
+               data-me="Glavni pravci aktivnosti našeg centra">Основные направления деятельности нашего центра</p>
             
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото взрослого хора]" data-en="[Adult Choir Photo]" data-me="[Odrasli Hor Foto]">[Фото взрослого хора]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Взрослый хор 'ZIMA'" data-en="Adult Choir 'Zima'" data-me="Odrasli Hor 'Zima'">Взрослый хор "ZIMA"</h4>
-                        <p data-ru="Классическая и современная хоровая музыка, выступления на фестивалях и концертах"
-                           data-en="Classical and modern choral music, performances at festivals and concerts"
-                           data-me="Klasična i moderna horovska muzika, nastupi na festivalima i koncertima">Классическая и современная хоровая музыка, выступления на фестивалях и концертах</p>
-                    </div>
+            <div class="directions-grid">
+                <div class="direction-card">
+                    <div class="direction-icon">🎵</div>
+                    <h3 class="direction-title" data-ru="Музыка для взрослых" data-en="Music for Adults" data-me="Muzika za Odrasle">Музыка для взрослых</h3>
+                    <p class="direction-description" data-ru="Классическая и современная хоровая музыка, индивидуальные занятия, участие в фестивалях"
+                       data-en="Classical and modern choral music, individual lessons, festival participation"
+                       data-me="Klasična i moderna horovska muzika, individualni časovi, učešće na festivalima">Классическая и современная хоровая музыка, индивидуальные занятия, участие в фестивалях</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото детского хора]" data-en="[Children's Choir Photo]" data-me="[Dečiji Hor Foto]">[Фото детского хора]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Детский хор 'ZIMA'" data-en="Children's Choir 'Zima'" data-me="Dečiji Hor 'Zima'">Детский хор "ZIMA"</h4>
-                        <p data-ru="Музыкальное развитие детей 6-14 лет, народные песни и современный репертуар"
-                           data-en="Musical development of children 6-14 years old, folk songs and modern repertoire"
-                           data-me="Muzički razvoj dece 6-14 godina, narodne pesme i moderni repertoar">Музыкальное развитие детей 6-14 лет, народные песни и современный репертуар</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">🎼</div>
+                    <h3 class="direction-title" data-ru="Музыка для детей" data-en="Music for Children" data-me="Muzika za Decu">Музыка для детей</h3>
+                    <p class="direction-description" data-ru="Музыкальное развитие детей всех возрастов, пение, ритмика, знакомство с инструментами"
+                       data-en="Musical development of children of all ages, singing, rhythmics, introduction to instruments"
+                       data-me="Muzički razvoj dece svih uzrasta, pevanje, ritmika, upoznavanje sa instrumentima">Музыкальное развитие детей всех возрастов, пение, ритмика, знакомство с инструментами</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото STEAM-клуба]" data-en="[STEAM Club Photo]" data-me="[STEAM Klub Foto]">[Фото STEAM-клуба]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Детский STEAM-клуб" data-en="Children's STEAM Club" data-me="Dečiji STEAM Klub">Детский STEAM-клуб</h4>
-                        <p data-ru="Робототехника, программирование, научные эксперименты для детей 6-10 лет"
-                           data-en="Robotics, programming, scientific experiments for children 6-10 years old"
-                           data-me="Robotika, programiranje, naučni eksperimenti za decu 6-10 godina">Робототехника, программирование, научные эксперименты для детей 6-10 лет</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">👥</div>
+                    <h3 class="direction-title" data-ru="Хор ZIMA" data-en="ZIMA Choir" data-me="Hor ZIMA">Хор ZIMA</h3>
+                    <p class="direction-description" data-ru="Взрослый хор с богатым репертуаром, выступления на концертах и фестивалях"
+                       data-en="Adult choir with rich repertoire, performances at concerts and festivals"
+                       data-me="Odrasli hor sa bogatim repertoarom, nastupi na koncertima i festivalima">Взрослый хор с богатым репертуаром, выступления на концертах и фестивалях</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото арт-студии]" data-en="[Art Studio Photo]" data-me="[Umetnička Radionica Foto]">[Фото арт-студии]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Арт-студия" data-en="Art Studio" data-me="Umetnička Radionica">Арт-студия</h4>
-                        <p data-ru="Творческие мастерские: рисование, лепка, аппликация для детей 5-12 лет"
-                           data-en="Creative workshops: drawing, modeling, applique for children 5-12 years old"
-                           data-me="Kreativne radionice: crtanje, modelovanje, aplikacija za decu 5-12 godina">Творческие мастерские: рисование, лепка, аппликация для детей 5-12 лет</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">👶</div>
+                    <h3 class="direction-title" data-ru="Детский хор ZIMA" data-en="Children's Choir ZIMA" data-me="Dečiji Hor ZIMA">Детский хор ZIMA</h3>
+                    <p class="direction-description" data-ru="Детский хор для детей 6-14 лет, развитие музыкальных способностей"
+                       data-en="Children's choir for children 6-14 years old, development of musical abilities"
+                       data-me="Dečiji hor za decu 6-14 godina, razvoj muzičkih sposobnosti">Детский хор для детей 6-14 лет, развитие музыкальных способностей</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото культурного вечера]" data-en="[Cultural Evening Photo]" data-me="[Kulturno Veče Foto]">[Фото культурного вечера]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Культурные вечера" data-en="Cultural Evenings" data-me="Kulturna Večera">Культурные вечера</h4>
-                        <p data-ru="Киноклуб, лектории, дискуссии с субтитрами на трех языках"
-                           data-en="Film club, lectures, discussions with subtitles in three languages"
-                           data-me="Film klub, predavanja, diskusije sa titlovima na tri jezika">Киноклуб, лектории, дискуссии с субтитрами на трех языках</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">🎭</div>
+                    <h3 class="direction-title" data-ru="Концерты и фестивали" data-en="Concerts and Festivals" data-me="Koncerti i Festivali">Концерты и фестивали</h3>
+                    <p class="direction-description" data-ru="Организация и участие в музыкальных фестивалях, концертах, культурных событиях"
+                       data-en="Organization and participation in music festivals, concerts, cultural events"
+                       data-me="Organizacija i učešće na muzičkim festivalima, koncertima, kulturnim događajima">Организация и участие в музыкальных фестивалях, концертах, культурных событиях</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото музыкального кружка]" data-en="[Music Club Photo]" data-me="[Muzički Klub Foto]">[Фото музыкального кружка]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Музыкальный кружок" data-en="Music Club" data-me="Muzički Klub">Музыкальный кружок</h4>
-                        <p data-ru="Пение, ритмика, знакомство с инструментами для детей 4-8 лет"
-                           data-en="Singing, rhythmics, introduction to instruments for children 4-8 years old"
-                           data-me="Pevanje, ritmika, upoznavanje sa instrumentima za decu 4-8 godina">Пение, ритмика, знакомство с инструментами для детей 4-8 лет</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">📚</div>
+                    <h3 class="direction-title" data-ru="Публичные лекции" data-en="Public Lectures" data-me="Javna Predavanja">Публичные лекции</h3>
+                    <p class="direction-description" data-ru="Лектории по музыке, культуре, истории, дискуссии на трех языках"
+                       data-en="Lectures on music, culture, history, discussions in three languages"
+                       data-me="Predavanja o muzici, kulturi, istoriji, diskusije na tri jezika">Лектории по музыке, культуре, истории, дискуссии на трех языках</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото языкового обмена]" data-en="[Language Exchange Photo]" data-me="[Jezik Razmena Foto]">[Фото языкового обмена]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Языковые обмены" data-en="Language Exchanges" data-me="Jezik Razmene">Языковые обмены</h4>
-                        <p data-ru="Разговорные клубы для родителей: русский-черногорский-английский"
-                           data-en="Conversation clubs for parents: Russian-Montenegrin-English"
-                           data-me="Konverzacijski klubovi za roditelje: ruski-crnogorski-engleski">Разговорные клубы для родителей: русский-черногорский-английский</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">🎨</div>
+                    <h3 class="direction-title" data-ru="Выставки" data-en="Exhibitions" data-me="Izložbe">Выставки</h3>
+                    <p class="direction-description" data-ru="Художественные выставки, творческие проекты, культурные экспозиции"
+                       data-en="Art exhibitions, creative projects, cultural expositions"
+                       data-me="Umetničke izložbe, kreativni projekti, kulturne ekspozicije">Художественные выставки, творческие проекты, культурные экспозиции</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-image" data-ru="[Фото семейного мастер-класса]" data-en="[Family Workshop Photo]" data-me="[Porodična Radionica Foto]">[Фото семейного мастер-класса]</div>
-                    <div class="program-content">
-                        <h4 data-ru="Семейные мастер-классы" data-en="Family Workshops" data-me="Porodične Radionice">Семейные мастер-классы</h4>
-                        <p data-ru="Совместное творчество, ремесла, кулинария для всей семьи"
-                           data-en="Joint creativity, crafts, cooking for the whole family"
-                           data-me="Zajednička kreativnost, zanati, kuvanje za celu porodicu">Совместное творчество, ремесла, кулинария для всей семьи</p>
-                    </div>
+                
+                <div class="direction-card">
+                    <div class="direction-icon">🎉</div>
+                    <h3 class="direction-title" data-ru="Праздники" data-en="Celebrations" data-me="Proslave">Праздники</h3>
+                    <p class="direction-description" data-ru="Организация праздников, юбилеев, культурных мероприятий для сообщества"
+                       data-en="Organization of holidays, anniversaries, cultural events for the community"
+                       data-me="Organizacija praznika, jubileja, kulturnih događaja za zajednicu">Организация праздников, юбилеев, культурных мероприятий для сообщества</p>
                 </div>
             </div>
-            
-            <div class="placeholder placeholder-medium" data-ru="[Здесь будет размещена информация о расписании занятий, стоимости участия и процессе регистрации]"
-                 data-en="[Information about class schedules, participation costs and registration process will be placed here]"
-                 data-me="[Ovde će biti postavljene informacije o rasporedu časova, troškovima učešća i procesu registracije]">[Здесь будет размещена информация о расписании занятий, стоимости участия и процессе регистрации]</div>
         </div>
     </section>
 
@@ -1264,74 +1497,85 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title" data-ru="Свяжитесь с нами" data-en="Contact Us" data-me="Kontaktirajte Nas">Свяжитесь с нами</h2>
-            <p class="section-subtitle" data-ru="Готовы присоединиться к нашему сообществу? Свяжитесь с нами!"
-               data-en="Ready to join our community? Contact us!"
-               data-me="Spremni da se pridružite našoj zajednici? Kontaktirajte nas!">Готовы присоединиться к нашему сообществу? Свяжитесь с нами!</p>
+            <h2 class="section-title" data-ru="Контакты и адреса" data-en="Contacts and Addresses" data-me="Kontakti i Adrese">Контакты и адреса</h2>
+            <p class="section-subtitle" data-ru="Свяжитесь с нами любым удобным способом"
+               data-en="Contact us in any convenient way"
+               data-me="Kontaktirajte nas na bilo koji prikladan način">Свяжитесь с нами любым удобным способом</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3 data-ru="Контактная информация" data-en="Contact Information" data-me="Kontakt Informacije">Контактная информация</h3>
-                    <div class="placeholder placeholder-small">
-                        <strong data-ru="Адрес:" data-en="Address:" data-me="Adresa:">Адрес:</strong> <span data-ru="[Полный адрес в Баре, Черногория]" data-en="[Full address in Bar, Montenegro]" data-me="[Puna adresa u Baru, Crna Gora]">[Полный адрес в Баре, Черногория]</span><br>
-                        <strong data-ru="Телефон:" data-en="Phone:" data-me="Telefon:">Телефон:</strong> <span data-ru="[Номер телефона]" data-en="[Phone number]" data-me="[Broj telefona]">[Номер телефона]</span><br>
-                        <strong data-ru="Email:" data-en="Email:" data-me="Email:">Email:</strong> <span data-ru="[Электронная почта]" data-en="[Email address]" data-me="[Email adresa]">[Электронная почта]</span><br>
-                        <strong data-ru="Веб-сайт:" data-en="Website:" data-me="Veb sajt:">Веб-сайт:</strong> <span data-ru="[URL сайта]" data-en="[Website URL]" data-me="[URL sajta]">[URL сайта]</span>
+                    <h3 class="contact-title" data-ru="Контактная информация" data-en="Contact Information" data-me="Kontakt Informacije">Контактная информация</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Телефон:" data-en="Phone:" data-me="Telefon:">Телефон:</strong><br>
+                            <a href="tel:+38269123456">+382 69 123 456</a>
+                        </div>
                     </div>
                     
-                    <h3 data-ru="Социальные сети" data-en="Social Networks" data-me="Društvene Mreže">Социальные сети</h3>
-                    <div class="social-icons">
-                        <a href="https://t.me/horzima" class="social-icon social-telegram" title="Telegram">
-                            <i class="fab fa-telegram-plane"></i>
-                        </a>
-                        <a href="https://facebook.com/horzima" class="social-icon social-facebook" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://instagram.com/horzima" class="social-icon social-instagram" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com/@horzima" class="social-icon social-youtube" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Email:" data-en="Email:" data-me="Email:">Email:</strong><br>
+                            <a href="mailto:info@zima-center.me">info@zima-center.me</a>
+                        </div>
                     </div>
                     
-                    <h3 data-ru="Часы работы" data-en="Working Hours" data-me="Radno Vreme">Часы работы</h3>
-                    <div class="placeholder placeholder-small" data-ru="[Расписание работы центра и программ]"
-                         data-en="[Center working hours and program schedules]"
-                         data-me="[Radno vreme centra i raspored programa]">[Расписание работы центра и программ]</div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Адрес:" data-en="Address:" data-me="Adresa:">Адрес:</strong><br>
+                            <span data-ru="ул. Свети Никола, 123, Бар, Черногория" data-en="St. Nicholas St., 123, Bar, Montenegro" data-me="Ulica Sveti Nikola, 123, Bar, Crna Gora">ул. Свети Никола, 123, Бар, Черногория</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Часы работы:" data-en="Working Hours:" data-me="Radno Vreme:">Часы работы:</strong><br>
+                            <span data-ru="Пн-Пт: 9:00-18:00, Сб: 10:00-16:00" data-en="Mon-Fri: 9:00-18:00, Sat: 10:00-16:00" data-me="Pon-Pet: 9:00-18:00, Sub: 10:00-16:00">Пн-Пт: 9:00-18:00, Сб: 10:00-16:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Telegram:" data-en="Telegram:" data-me="Telegram:">Telegram:</strong><br>
+                            <a href="https://t.me/horzima" target="_blank">@horzima</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong data-ru="Facebook:" data-en="Facebook:" data-me="Facebook:">Facebook:</strong><br>
+                            <a href="https://facebook.com/horzima" target="_blank">horzima</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3 data-ru="Отправить сообщение" data-en="Send Message" data-me="Pošaljite Poruku">Отправить сообщение</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name" data-ru="Имя *" data-en="Name *" data-me="Ime *">Имя *</label>
-                            <input type="text" id="name" name="name" required 
-                                   data-ru-placeholder="Ваше имя" data-en-placeholder="Your name" data-me-placeholder="Vaše ime" 
-                                   placeholder="Ваше имя">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-ru="Email *" data-en="Email *" data-me="Email *">Email *</label>
-                            <input type="email" id="email" name="email" required 
-                                   data-ru-placeholder="your@email.com" data-en-placeholder="your@email.com" data-me-placeholder="your@email.com" 
-                                   placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" data-ru="Тема" data-en="Subject" data-me="Tema">Тема</label>
-                            <input type="text" id="subject" name="subject" 
-                                   data-ru-placeholder="Тема сообщения" data-en-placeholder="Message subject" data-me-placeholder="Tema poruke" 
-                                   placeholder="Тема сообщения">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-ru="Сообщение *" data-en="Message *" data-me="Poruka *">Сообщение *</label>
-                            <textarea id="message" name="message" required 
-                                      data-ru-placeholder="Ваше сообщение..." data-en-placeholder="Your message..." data-me-placeholder="Vaša poruka..." 
-                                      placeholder="Ваше сообщение..."></textarea>
-                        </div>
-                        <button type="submit" class="cta-button" data-ru="Отправить" data-en="Send" data-me="Pošalji">Отправить</button>
-                    </form>
+                <div class="map-container">
+                    <h3 class="contact-title" data-ru="Наше расположение" data-en="Our Location" data-me="Naša Lokacija">Наше расположение</h3>
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <div data-ru="Карта будет загружена здесь" data-en="Map will be loaded here" data-me="Mapa će biti učitana ovde">Карта будет загружена здесь</div>
+                        <div style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;" data-ru="ул. Свети Никола, 123, Бар" data-en="St. Nicholas St., 123, Bar" data-me="Ulica Sveti Nikola, 123, Bar">ул. Свети Никола, 123, Бар</div>
+                    </div>
                 </div>
             </div>
         </div>
