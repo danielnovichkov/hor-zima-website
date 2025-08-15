@@ -1,0 +1,20 @@
+# GitHub Pages Configuration
+# This file tells GitHub Pages how to serve the site
+
+# Set the source directory to the root
+source: .
+
+# Set the destination directory (GitHub Pages will serve from here)
+destination: .
+
+# Enable Jekyll processing (set to false for static sites)
+jekyll: false
+
+# Set the default language
+lang: ru
+
+# Set the default encoding
+encoding: utf-8
+
+# Set the default timezone
+timezone: Europe/Podgorica
