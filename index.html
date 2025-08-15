@@ -1947,6 +1947,127 @@
             color: #fbbf24;
             transform: scale(1.2);
         }
+        
+        /* Map Section */
+        .map-section {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .map-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .map-title {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .map-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .map-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .map-info {
+            padding: 2rem;
+        }
+        
+        .map-address {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .address-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .address-text {
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .address-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .address-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1rem;
+            color: #374151;
+        }
+        
+        .address-item i {
+            color: #3b82f6;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+        
+        .map-frame {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+        
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .directions-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .directions-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .map-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .map-frame {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body class="lang-ru">
@@ -1960,13 +2081,13 @@
                         <i class="fas fa-phone"></i>
                         <span>+382 69 123 456</span>
                     </a>
-                    <a href="mailto:info@zima-center.me" class="header-contact-item">
+                    <a href="mailto:info@nvozima.me" class="header-contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>info@zima-center.me</span>
+                        <span>info@nvozima.me</span>
                     </a>
                     <a href="#" class="header-contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span data-ru="ул. Свети Никола, 123, Бар" data-en="St. Sveti Nikola, 123, Bar" data-me="ul. Sveti Nikola, 123, Bar">ул. Свети Никола, 123, Бар</span>
+                        <span data-ru="Konkatedrala Svetog Petra Apostola (помещение крипты, вход с левой стороны от главного входа в храм), Бар" data-en="Konkatedrala Svetog Petra Apostola (crypt premises, entrance on the left side of the main church entrance), Bar" data-me="Konkatedrala Svetog Petra Apostola (prostorije kripte, ulaz sa lijeve strane glavnog ulaza u crkvu), Bar">Konkatedrala Svetog Petra Apostola (помещение крипты, вход с левой стороны от главного входа в храм), Бар</span>
                     </a>
                 </div>
                 <div class="header-social">
@@ -2860,7 +2981,7 @@
                         </div>
                         <div class="contact-text">
                             <strong data-ru="Email:" data-en="Email:" data-me="Email:">Email:</strong><br>
-                            <a href="mailto:info@zima-center.me">info@zima-center.me</a>
+                            <a href="mailto:info@nvozima.me">info@nvozima.me</a>
                         </div>
                     </div>
                     
@@ -3206,7 +3327,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>info@zima-center.me</span>
+                                                    <span>info@nvozima.me</span>
                     </div>
                 </div>
                 
@@ -3348,6 +3469,65 @@
                            data-en="You can support us in different ways: become a choir member, attend our events, make donations, help organize events or just tell your friends about us. Any support is important!"
                            data-me="Možete nas podržati na različite načine: postati član hora, pohađati naše događaje, davati donacije, pomagati u organizaciji događaja ili samo reći prijateljima o nama. Svaka podrška je važna!">Вы можете поддержать нас разными способами: стать участником хора, посещать наши мероприятия, делать пожертвования, помогать в организации событий или просто рассказать о нас друзьям. Любая поддержка важна!</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <div class="map-header">
+                <h2 class="map-title" data-ru="Как добраться" data-en="How to Get There" data-me="Kako Doći">Как добраться</h2>
+                <p class="map-subtitle" data-ru="Найдите нас в центре Бара, рядом с Криптом сокафедрального собора Святого Петра"
+                   data-en="Find us in the center of Bar, near the Crypt of the Co-Cathedral of St. Peter"
+                   data-me="Pronađite nas u centru Bara, pored Kripte sokaferalne katedrale Svetog Petra">Найдите нас в центре Бара, рядом с Криптом сокафедрального собора Святого Петра</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-info">
+                    <div class="map-address">
+                        <h3 class="address-title" data-ru="Наш адрес" data-en="Our Address" data-me="Naša Adresa">Наш адрес</h3>
+                        <p class="address-text" data-ru="Комьюнити центр ZIMA расположен в историческом центре Бара, рядом с одной из главных достопримечательностей города - Криптом сокафедрального собора Святого Петра."
+                           data-en="ZIMA Community Center is located in the historic center of Bar, next to one of the city's main attractions - the Crypt of the Co-Cathedral of St. Peter."
+                           data-me="Komjuniti centar ZIMA se nalazi u istorijskom centru Bara, pored jedne od glavnih atrakcija grada - Kripte sokaferalne katedrale Svetog Petra.">Комьюнити центр ZIMA расположен в историческом центре Бара, рядом с одной из главных достопримечательностей города - Криптом сокафедрального собора Святого Петра.</p>
+                        
+                        <div class="address-details">
+                            <div class="address-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-ru="Konkatedrala Svetog Petra Apostola (помещение крипты, вход с левой стороны от главного входа в храм), Бар, Черногория" data-en="Konkatedrala Svetog Petra Apostola (crypt premises, entrance on the left side of the main church entrance), Bar, Montenegro" data-me="Konkatedrala Svetog Petra Apostola (prostorije kripte, ulaz sa lijeve strane glavnog ulaza u crkvu), Bar, Crna Gora">Konkatedrala Svetog Petra Apostola (помещение крипты, вход с левой стороны от главного входа в храм), Бар, Черногория</span>
+                            </div>
+                            <div class="address-item">
+                                <i class="fas fa-clock"></i>
+                                <span data-ru="Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-18:00" data-en="Mon-Fri: 9:00-21:00, Sat-Sun: 10:00-18:00" data-me="Pon-Pet: 9:00-21:00, Sub-Ned: 10:00-18:00">Пн-Пт: 9:00-21:00, Сб-Вс: 10:00-18:00</span>
+                            </div>
+                            <div class="address-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+382 69 123 456</span>
+                            </div>
+                            <div class="address-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@nvozima.me</span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://maps.google.com/maps?q=Konkatedrala+Svetog+Petra+Apostola,+Bar,+Montenegro" 
+                           target="_blank" 
+                           class="directions-button"
+                           data-ru="Построить маршрут" 
+                           data-en="Get Directions" 
+                           data-me="Dobijte Uputstva">Построить маршрут</a>
+                    </div>
+                </div>
+                
+                <div class="map-frame">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d312.5917215351231!2d19.097335123702106!3d42.09471982804732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134e730028d7c7db%3A0xde35c1112ed0b8db!2sKonkatedrala%20Svetog%20Petra%20Apostola!5e0!3m2!1sru!2s!4v1755258491127!5m2!1sru!2s"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        style="border:0; width:100%; height:100%;">
+                    </iframe>
                 </div>
             </div>
         </div>
