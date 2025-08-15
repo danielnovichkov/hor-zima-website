@@ -45,21 +45,123 @@
             padding: 0 20px;
         }
         
-        /* Header - Winter Theme */
+        /* Header - White Theme */
         header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
-            color: white;
-            padding: 1rem 0;
+            background: white;
+            color: #1e3a8a;
+            padding: 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .header-top {
+            background: #f8fafc;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .header-contact-item:hover {
+            color: #1e3a8a;
+        }
+        
+        .header-social {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .header-social a {
+            color: #64748b;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .header-social a:hover {
+            color: #1e3a8a;
+        }
+        
+        .header-main {
+            padding: 1rem 0;
+            background: white;
+        }
+        
+        .header-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .header-button {
+            background: #1e3a8a;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .header-button:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+        }
+        
+        .header-button.secondary {
+            background: transparent;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+        }
+        
+        .header-button.secondary:hover {
+            background: #1e3a8a;
+            color: white;
         }
         
         .logo {
@@ -83,7 +185,7 @@
             width: 64px;
             height: 64px;
             position: relative;
-            color: #87ceeb; /* Light blue like in logo */
+            color: #3b82f6; /* Blue snowflake */
         }
         
         .snowflake::before {
@@ -92,7 +194,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            color: #87ceeb;
+            color: #3b82f6;
         }
         
         .sparkle {
@@ -1485,13 +1587,133 @@
         .lang-me [data-lang="me"] {
             display: block;
         }
+        
+        /* FAQ Accordion */
+        .faq-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 4rem 0;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-title {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .faq-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e3a8a;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+        
+        .faq-question.active {
+            background: #1e3a8a;
+            color: white;
+        }
+        
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #f8fafc;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 1.5rem 2rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body class="lang-ru">
     <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
+        <!-- Header Top with Contacts and Social -->
+        <div class="header-top">
+            <div class="header-top-content">
+                <div class="header-contacts">
+                    <a href="tel:+38269123456" class="header-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+382 69 123 456</span>
+                    </a>
+                    <a href="mailto:info@zima-center.me" class="header-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@zima-center.me</span>
+                    </a>
+                    <a href="#" class="header-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-ru="ул. Свети Никола, 123, Бар" data-en="St. Sveti Nikola, 123, Bar" data-me="ul. Sveti Nikola, 123, Bar">ул. Свети Никола, 123, Бар</span>
+                    </a>
+                </div>
+                <div class="header-social">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header Main with Logo, Navigation and Buttons -->
+        <div class="header-main">
+            <div class="header-main-content">
                 <div class="logo">
                     <div class="logo-icon">
                         <div class="snowflake">
@@ -1505,23 +1727,26 @@
                         <div class="logo-subtitle" data-ru="Комьюнити центр" data-en="Community Center" data-me="Komjuniti Centar">Комьюнити центр</div>
                     </div>
                 </div>
+                
                 <nav>
                     <ul>
                         <li><a href="#home" data-ru="Главная" data-en="Home" data-me="Početna">Главная</a></li>
                         <li><a href="#about" data-ru="О нас" data-en="About" data-me="O nama">О нас</a></li>
-                        <li><a href="#programs" data-ru="Программы" data-en="Programs" data-me="Programi">Программы</a></li>
-                        <li><a href="#impact" data-ru="Результаты" data-en="Impact" data-me="Rezultati">Результаты</a></li>
-                        <li><a href="#team" data-ru="Команда" data-en="Team" data-me="Tim">Команда</a></li>
-                        <li><a href="#partners" data-ru="Партнеры" data-en="Partners" data-me="Partneri">Партнеры</a></li>
-                        <li><a href="#media" data-ru="СМИ о нас" data-en="Media About Us" data-me="Mediji o Nama">СМИ о нас</a></li>
-                        <li><a href="#awards" data-ru="Награды" data-en="Awards" data-me="Nagrade">Награды</a></li>
+                        <li><a href="#directions" data-ru="Направления" data-en="Directions" data-me="Pravci">Направления</a></li>
+                        <li><a href="#news" data-ru="Новости" data-en="News" data-me="Vesti">Новости</a></li>
+                        <li><a href="#members" data-ru="Хор" data-en="Choir" data-me="Hor">Хор</a></li>
                         <li><a href="#contact" data-ru="Контакты" data-en="Contact" data-me="Kontakt">Контакты</a></li>
                     </ul>
                 </nav>
-                <div class="language-switcher">
-                    <a href="#" class="lang-link active" data-lang="ru" onclick="switchLang('ru'); return false;">RU</a>
-                    <a href="#" class="lang-link" data-lang="en" onclick="switchLang('en'); return false;">EN</a>
-                    <a href="#" class="lang-link" data-lang="me" onclick="switchLang('me'); return false;">CG</a>
+                
+                <div class="header-buttons">
+                    <a href="#schedule" class="header-button" data-ru="Расписание" data-en="Schedule" data-me="Raspored">Расписание</a>
+                    <a href="#contact" class="header-button secondary" data-ru="Связаться" data-en="Contact Us" data-me="Kontaktirajte Nas">Связаться</a>
+                    <div class="language-switcher">
+                        <a href="#" class="lang-link active" data-lang="ru" onclick="switchLang('ru'); return false;">RU</a>
+                        <a href="#" class="lang-link" data-lang="en" onclick="switchLang('en'); return false;">EN</a>
+                        <a href="#" class="lang-link" data-lang="me" onclick="switchLang('me'); return false;">CG</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2560,7 +2785,168 @@
             
             // Start auto-advance
             setInterval(autoAdvance, 5000);
+            
+            // Initialize FAQ accordion
+            initFAQ();
         };
+        
+        // FAQ Accordion functionality
+        function initFAQ() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all other items
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        this.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        }
     </script>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-title" data-ru="Частые вопросы" data-en="Frequently Asked Questions" data-me="Često Postavljena Pitanja">Частые вопросы</h2>
+                <p class="faq-subtitle" data-ru="Ответы на самые популярные вопросы о центре ZIMA"
+                   data-en="Answers to the most common questions about ZIMA center"
+                   data-me="Odgovori na najčešća pitanja o centru ZIMA">Ответы на самые популярные вопросы о центре ZIMA</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Что такое центр ZIMA и чем он занимается?" data-en="What is ZIMA center and what does it do?" data-me="Šta je centar ZIMA i čime se bavi?">Что такое центр ZIMA и чем он занимается?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="ZIMA — это комьюнити-центр в Баре, который объединяет людей через музыку, искусство и культуру. Мы проводим занятия хором, творческие мастерские, организуем концерты и фестивали, создаем пространство для общения и развития."
+                           data-en="ZIMA is a community center in Bar that unites people through music, art and culture. We conduct choir classes, creative workshops, organize concerts and festivals, create space for communication and development."
+                           data-me="ZIMA je komjuniti centar u Baru koji ujedinjuje ljude kroz muziku, umetnost i kulturu. Održavamo časove hora, kreativne radionice, organizujemo koncerte i festivale, stvaramo prostor za komunikaciju i razvoj.">ZIMA — это комьюнити-центр в Баре, который объединяет людей через музыку, искусство и культуру. Мы проводим занятия хором, творческие мастерские, организуем концерты и фестивали, создаем пространство для общения и развития.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Могу ли я присоединиться к хору без музыкального образования?" data-en="Can I join the choir without musical education?" data-me="Mogu li se pridružiti horu bez muzičkog obrazovanja?">Могу ли я присоединиться к хору без музыкального образования?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Конечно! Мы принимаем всех желающих, независимо от уровня подготовки. Главное — любовь к музыке и желание петь. Наши опытные педагоги помогут развить ваши способности."
+                           data-en="Of course! We accept everyone regardless of skill level. The main thing is love for music and desire to sing. Our experienced teachers will help develop your abilities."
+                           data-me="Naravno! Primaemo sve zainteresovane bez obzira na nivo pripreme. Glavno je ljubav prema muzici i želja za pevanjem. Naši iskusni pedagozi će pomoći da razvijete vaše sposobnosti.">Конечно! Мы принимаем всех желающих, независимо от уровня подготовки. Главное — любовь к музыке и желание петь. Наши опытные педагоги помогут развить ваши способности.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="С какого возраста можно записаться в детский хор?" data-en="From what age can children join the choir?" data-me="Od kog uzrasta se deca mogu prijaviti u hor?">С какого возраста можно записаться в детский хор?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Детский хор принимает детей от 6 до 14 лет. Для самых маленьких у нас есть специальные программы развития музыкальных способностей через игру и творчество."
+                           data-en="The children's choir accepts children from 6 to 14 years old. For the youngest, we have special programs for developing musical abilities through play and creativity."
+                           data-me="Dečiji hor prima decu od 6 do 14 godina. Za najmlađe imamo posebne programe za razvoj muzičkih sposobnosti kroz igru i kreativnost.">Детский хор принимает детей от 6 до 14 лет. Для самых маленьких у нас есть специальные программы развития музыкальных способностей через игру и творчество.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Какие занятия проводятся в центре кроме хора?" data-en="What other classes are held at the center besides choir?" data-me="Koje druge aktivnosti se održavaju u centru pored hora?">Какие занятия проводятся в центре кроме хора?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="У нас есть художественная студия, студия керамики, частные уроки музыки (вокал, фортепиано, барабаны), йога, продюсирование и звукозапись, а также различные мастер-классы и лекции."
+                           data-en="We have an art studio, ceramics studio, private music lessons (vocal, piano, drums), yoga, music production and recording, as well as various master classes and lectures."
+                           data-me="Imamo umetničku studiju, keramičku studiju, privatne časove muzike (vokal, klavir, bubnjevi), jogu, muzičku produkciju i snimanje, kao i različite majstorske klase i predavanja.">У нас есть художественная студия, студия керамики, частные уроки музыки (вокал, фортепиано, барабаны), йога, продюсирование и звукозапись, а также различные мастер-классы и лекции.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Есть ли плата за занятия?" data-en="Is there a fee for classes?" data-me="Da li postoji naknada za časove?">Есть ли плата за занятия?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="У нас есть как бесплатные, так и платные программы. Хоровые занятия частично финансируются, частные уроки и специализированные курсы оплачиваются отдельно. Подробности можно узнать у администрации."
+                           data-en="We have both free and paid programs. Choir classes are partially funded, private lessons and specialized courses are paid separately. Details can be found from the administration."
+                           data-me="Imamo i besplatne i plaćene programe. Časovi hora su delimično finansirani, privatni časovi i specijalizovani kursevi se plaćaju odvojeno. Detalje možete saznati od administracije.">У нас есть как бесплатные, так и платные программы. Хоровые занятия частично финансируются, частные уроки и специализированные курсы оплачиваются отдельно. Подробности можно узнать у администрации.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Как часто проходят репетиции хора?" data-en="How often do choir rehearsals take place?" data-me="Koliko često se održavaju probe hora?">Как часто проходят репетиции хора?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Взрослый хор репетирует два раза в неделю по вечерам, детский хор — один-два раза в неделю в удобное для детей время. Расписание может меняться в зависимости от подготовки к концертам."
+                           data-en="The adult choir rehearses twice a week in the evenings, the children's choir - once or twice a week at a time convenient for children. The schedule may change depending on concert preparation."
+                           data-me="Odrasli hor vežba dva puta nedeljno uveče, dečiji hor - jednom ili dva puta nedeljno u vreme pogodno za decu. Raspored se može menjati u zavisnosti od priprema za koncerte.">Взрослый хор репетирует два раза в неделю по вечерам, детский хор — один-два раза в неделю в удобное для детей время. Расписание может меняться в зависимости от подготовки к концертам.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Можно ли просто прийти в центр познакомиться?" data-en="Can I just come to the center to get acquainted?" data-me="Mogu li samo doći u centar da se upoznam?">Можно ли просто прийти в центр познакомиться?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Конечно! Наш центр всегда открыт для гостей. Вы можете прийти выпить чаю, пообщаться, посмотреть на занятия или просто познакомиться с нашей атмосферой. Предварительно лучше позвонить."
+                           data-en="Of course! Our center is always open to guests. You can come for tea, chat, watch classes or just get acquainted with our atmosphere. It's better to call in advance."
+                           data-me="Naravno! Naš centar je uvek otvoren za goste. Možete doći na čaj, popričati, pogledati časove ili samo se upoznati sa našom atmosferom. Bolje je unapred pozvati.">Конечно! Наш центр всегда открыт для гостей. Вы можете прийти выпить чаю, пообщаться, посмотреть на занятия или просто познакомиться с нашей атмосферой. Предварительно лучше позвонить.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Участвует ли хор в фестивалях и конкурсах?" data-en="Does the choir participate in festivals and competitions?" data-me="Da li hor učestvuje na festivalima i takmičenjima?">Участвует ли хор в фестивалях и конкурсах?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Да! Наши хоры регулярно участвуют в местных и международных фестивалях, конкурсах и концертах. Мы гордимся нашими достижениями и постоянно ищем новые возможности для выступлений."
+                           data-en="Yes! Our choirs regularly participate in local and international festivals, competitions and concerts. We are proud of our achievements and constantly look for new performance opportunities."
+                           data-me="Da! Naši horovi redovno učestvuju na lokalnim i međunarodnim festivalima, takmičenjima i koncertima. Ponosni smo na naša dostignuća i stalno tražimo nove prilike za nastupe.">Да! Наши хоры регулярно участвуют в местных и международных фестивалях, конкурсах и концертах. Мы гордимся нашими достижениями и постоянно ищем новые возможности для выступлений.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Есть ли у вас программы для людей с особенностями развития?" data-en="Do you have programs for people with developmental features?" data-me="Da li imate programe za ljude sa razvojnim osobinama?">Есть ли у вас программы для людей с особенностями развития?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Да, у нас есть инклюзивные программы. Мы приветствуем всех и создаем адаптированные занятия для людей с различными особенностями. Наши педагоги имеют опыт работы с разными группами."
+                           data-en="Yes, we have inclusive programs. We welcome everyone and create adapted classes for people with various features. Our teachers have experience working with different groups."
+                           data-me="Da, imamo inkluzivne programe. Pozdravljamo sve i stvaramo prilagođene časove za ljude sa različitim osobinama. Naši pedagozi imaju iskustvo u radu sa različitim grupama.">Да, у нас есть инклюзивные программы. Мы приветствуем всех и создаем адаптированные занятия для людей с различными особенностями. Наши педагоги имеют опыт работы с разными группами.</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span data-ru="Как можно поддержать центр ZIMA?" data-en="How can I support ZIMA center?" data-me="Kako mogu podržati centar ZIMA?">Как можно поддержать центр ZIMA?</span>
+                        <i class="faq-icon fas fa-plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content" data-ru="Вы можете поддержать нас разными способами: стать участником хора, посещать наши мероприятия, делать пожертвования, помогать в организации событий или просто рассказать о нас друзьям. Любая поддержка важна!"
+                           data-en="You can support us in different ways: become a choir member, attend our events, make donations, help organize events or just tell your friends about us. Any support is important!"
+                           data-me="Možete nas podržati na različite načine: postati član hora, pohađati naše događaje, davati donacije, pomagati u organizaciji događaja ili samo reći prijateljima o nama. Svaka podrška je važna!">Вы можете поддержать нас разными способами: стать участником хора, посещать наши мероприятия, делать пожертвования, помогать в организации событий или просто рассказать о нас друзьям. Любая поддержка важна!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
