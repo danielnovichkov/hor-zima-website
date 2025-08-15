@@ -32,8 +32,8 @@
 3. Сайт обновляется автоматически
 
 ## 📱 Текущие URL сайта:
-- **Vercel**: https://hor-zima-website-4jpyik0nu-john-smiths-projects-a2c16bf2.vercel.app ✅
-- **GitHub Pages**: https://danielnovichkov.github.io/hor-zima-website/ (после настройки)
+- **Vercel**: https://hor-zima-website-no51kkfss-john-smiths-projects-a2c16bf2.vercel.app ✅
+- **GitHub Pages**: https://danielnovichkov.github.io/hor-zima-website/ ✅
 
 ## 🛠️ Ручной деплой
 

@@ -60,8 +60,10 @@ Community Center "ZIMA" - это многоязычный комьюнити ц�
 ## 🚀 Быстрый старт
 
 ### Просмотр сайта
-- **Vercel**: https://hor-zima-website-no51kkfss-john-smiths-projects-a2c16bf2.vercel.app ✅
-- **GitHub Pages**: https://danielnovichkov.github.io/hor-zima-website/ (после настройки)
+- **🌐 Основной сайт (GitHub Pages)**: https://danielnovichkov.github.io/hor-zima-website/ ✅
+- **🔄 Резервный (Vercel)**: https://hor-zima-website-no51kkfss-john-smiths-projects-a2c16bf2.vercel.app ✅
+
+> **Рекомендация**: Используйте GitHub Pages как основной хостинг - он идеально подходит для статических сайтов, бесплатный и простой в настройке.
 
 ### Локальная разработка
 ```bash
