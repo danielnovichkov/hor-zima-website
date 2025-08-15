@@ -274,6 +274,150 @@
             z-index: 2;
         }
         
+        /* Full Screen Events Slider */
+        .fullscreen-slider {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-container {
+            height: 100%;
+            position: relative;
+        }
+        
+        .slider-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-slide.active {
+            opacity: 1;
+        }
+        
+        .slider-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7) 0%, rgba(59, 130, 246, 0.5) 50%, rgba(96, 165, 250, 0.3) 100%);
+        }
+        
+        .slider-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .slider-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slider-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .slider-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .slider-button {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            color: #1e3a8a;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .slider-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .slider-pagination {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 3;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        
+        .slider-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .slider-nav.prev {
+            left: 2rem;
+        }
+        
+        .slider-nav.next {
+            right: 2rem;
+        }
+        
         /* Events Slider */
         .events-slider {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -1022,6 +1166,38 @@
             .polaroid-caption {
                 font-size: 0.6rem;
             }
+            
+            /* Mobile Slider adjustments */
+            .slider-title {
+                font-size: 2.5rem;
+            }
+            
+            .slider-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .slider-description {
+                font-size: 1rem;
+            }
+            
+            .slider-button {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .slider-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .slider-nav.prev {
+                left: 1rem;
+            }
+            
+            .slider-nav.next {
+                right: 1rem;
+            }
         }
         
         /* Placeholder Styles */
@@ -1118,6 +1294,62 @@
             </div>
         </div>
     </header>
+
+    <!-- Full Screen Events Slider -->
+    <section class="fullscreen-slider">
+        <div class="slider-container">
+            <!-- Slide 1: Children's Choir Audition -->
+            <div class="slider-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect width=\"1200\" height=\"800\" fill=\"%233b82f6\"/><text x=\"600\" y=\"400\" text-anchor=\"middle\" fill=\"white\" font-size=\"48\">🎵 Детский хор</text></svg>');">
+                <div class="slider-content">
+                    <h2 class="slider-title" data-ru="Прослушивание детского хора" data-en="Children's Choir Audition" data-me="Audicija Dečijeg Hora">Прослушивание детского хора</h2>
+                    <p class="slider-subtitle" data-ru="19 августа 2024" data-en="August 19, 2024" data-me="19. Avgust 2024">19 августа 2024</p>
+                    <p class="slider-description" data-ru="Приглашаем детей 6-14 лет на прослушивание в детский хор ZIMA. Развитие музыкальных способностей, участие в концертах и фестивалях. Приходите и откройте в себе талант!"
+                       data-en="We invite children 6-14 years old to audition for the ZIMA children's choir. Development of musical abilities, participation in concerts and festivals. Come and discover your talent!"
+                       data-me="Pozivamo decu 6-14 godina na audiciju za dečiji hor ZIMA. Razvoj muzičkih sposobnosti, učešće na koncertima i festivalima. Dođite i otkrijte svoj talenat!">Приглашаем детей 6-14 лет на прослушивание в детский хор ZIMA. Развитие музыкальных способностей, участие в концертах и фестивалях. Приходите и откройте в себе талант!</p>
+                    <a href="#contact" class="slider-button" data-ru="Записаться на прослушивание" data-en="Register for Audition" data-me="Prijavite se na Audiciju">Записаться на прослушивание</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Performance in Herceg Novi -->
+            <div class="slider-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect width=\"1200\" height=\"800\" fill=\"%231e3a8a\"/><text x=\"600\" y=\"400\" text-anchor=\"middle\" fill=\"white\" font-size=\"48\">⭐ Концерт в Херцог-Нови</text></svg>');">
+                <div class="slider-content">
+                    <h2 class="slider-title" data-ru="Выступление в Херцог-Нови" data-en="Performance in Herceg Novi" data-me="Nastup u Herceg Novom">Выступление в Херцог-Нови</h2>
+                    <p class="slider-subtitle" data-ru="Октябрь 2024" data-en="October 2024" data-me="Oktobar 2024">Октябрь 2024</p>
+                    <p class="slider-description" data-ru="Взрослый хор ZIMA выступит на фестивале в Херцог-Нови. Классическая и современная хоровая музыка. Не пропустите это незабываемое событие!"
+                       data-en="The adult choir ZIMA will perform at the festival in Herceg Novi. Classical and modern choral music. Don't miss this unforgettable event!"
+                       data-me="Odrasli hor ZIMA nastupiće na festivalu u Herceg Novom. Klasična i moderna horovska muzika. Ne propustite ovaj nezaboravan događaj!">Взрослый хор ZIMA выступит на фестивале в Херцог-Нови. Классическая и современная хоровая музыка. Не пропустите это незабываемое событие!</p>
+                    <a href="#" class="slider-button" data-ru="Подписаться на событие" data-en="Subscribe to Event" data-me="Pretplatite se na Događaj">Подписаться на событие</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3: 10 Years Anniversary -->
+            <div class="slider-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><rect width=\"1200\" height=\"800\" fill=\"%2360a5fa\"/><text x=\"600\" y=\"400\" text-anchor=\"middle\" fill=\"white\" font-size=\"48\">🎉 10 лет хору ZIMA</text></svg>');">
+                <div class="slider-content">
+                    <h2 class="slider-title" data-ru="10 лет хору ZIMA" data-en="10 Years of ZIMA Choir" data-me="10 Godina Hora ZIMA">10 лет хору ZIMA</h2>
+                    <p class="slider-subtitle" data-ru="Октябрь 2024" data-en="October 2024" data-me="Oktobar 2024">Октябрь 2024</p>
+                    <p class="slider-description" data-ru="Юбилейный концерт и празднование 10-летия хора ZIMA. Коллаж фотографий за 10 лет, воспоминания, музыка. Поддержите нас в организации этого особенного праздника!"
+                       data-en="Anniversary concert and celebration of 10 years of the ZIMA choir. Collage of photos over 10 years, memories, music. Support us in organizing this special celebration!"
+                       data-me="Jubilarni koncert i proslava 10 godina hora ZIMA. Kolaž fotografija tokom 10 godina, sećanja, muzika. Podržite nas u organizaciji ove posebne proslave!">Юбилейный концерт и празднование 10-летия хора ZIMA. Коллаж фотографий за 10 лет, воспоминания, музыка. Поддержите нас в организации этого особенного праздника!</p>
+                    <a href="#contact" class="slider-button" data-ru="Помочь спонсором" data-en="Help as Sponsor" data-me="Pomoći kao Sponzor">Помочь спонсором</a>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <button class="slider-nav prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Pagination -->
+            <div class="slider-pagination">
+                <div class="slider-dot active" onclick="goToSlide(0)"></div>
+                <div class="slider-dot" onclick="goToSlide(1)"></div>
+                <div class="slider-dot" onclick="goToSlide(2)"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Events Slider Section -->
     <section id="events" class="events-slider">
@@ -1707,10 +1939,43 @@
             });
         }
         
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const totalSlides = slides.length;
+        
+        function showSlide(n) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        function goToSlide(n) {
+            showSlide(n);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        function autoAdvance() {
+            changeSlide(1);
+        }
+        
         // Initialize when page loads
         window.onload = function() {
             switchLang('ru');
             initPolaroids();
+            
+            // Start auto-advance
+            setInterval(autoAdvance, 5000);
         };
     </script>
 </body>
